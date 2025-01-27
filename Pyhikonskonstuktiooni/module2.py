@@ -110,7 +110,7 @@ print(f"Kütusekulu arvutamine on {round(vastus,2)}")
 print("did you know that avarge speed of a skateboard is 29,9km/h? insertn nerd emoji")
 
 try:
-    kiirus=29,9 #kilometrris
+    kiirus=29.9 #kilometrris
     M=float(input("Kui kaugele jõuab M minutiga?: "))
     if M>0:
         print("aeg avutamine: ")
@@ -128,7 +128,7 @@ try:
         print("aeg avutamine: ")
         minutit=aeg//60 #tundid
         balling=aeg%60 #minutit
-        print(f"aeg on {round(minutit,2)}:{round(balling),2}")
+        print(f"aeg on {round(minutit)}:{round(balling):02}")
     else:
         print("Arvud peavad suurem kui 0 olla!")
 except:
