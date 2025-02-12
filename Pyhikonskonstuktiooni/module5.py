@@ -85,7 +85,7 @@ arv=randint(0,1)
 if MrNimiOne=="Maksim" and MrNimiTwo=="Nikita":
     print("YAY, hea töö!")
 elif arv==0:
-    print("")
+    print(" ")
 
     
 
