@@ -2,15 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>5cab0188-469a-4b79-ab36-ade82b77ad81</ProjectGuid>
+    <ProjectGuid>bca6b0fe-ac09-499f-a52e-4ebc003d9047</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>module5.py</StartupFile>
+    <StartupFile>PythonApplication1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>Pyhikonskonstuktiooni</Name>
-    <RootNamespace>Pyhikonskonstuktiooni</RootNamespace>
+    <Name>PythonApplication1</Name>
+    <RootNamespace>PythonApplication1</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,12 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="module1.py" />
-    <Compile Include="module2.py" />
-    <Compile Include="module3.py" />
-    <Compile Include="module4.py" />
-    <Compile Include="module5.py" />
-    <Compile Include="Pyhikonskonstuktiooni.py" />
+    <Compile Include="PythonApplication1.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
