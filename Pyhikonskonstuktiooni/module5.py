@@ -46,6 +46,9 @@
 # istitle() 	Returns True if the string follows the rules of a title
 # isupper()	Returns True if all characters in the string are upper case
 
+from random import Random
+
+
 NameKey=input("Mis on sinu nimi? ")
 pilet=print()
 if NameKey.isupper() and NameKey.lower()=="juku":
@@ -71,3 +74,20 @@ if NameKey.isupper() and NameKey.lower()=="juku":
         print("Tekkis viga: ", e)
 else:
     print(":| Kes see on?")
+
+#ülasane 2
+from random import *
+MrNimiOne=input("Mis on õige nimi on? ")
+MrNimiTwo=input("Mis on õige nimi on? ")
+
+arv=randint(0,1)
+
+if MrNimiOne=="Maksim" and MrNimiTwo=="Nikita":
+    print("YAY, hea töö!")
+elif arv==0:
+    print("")
+
+    
+
+
+
