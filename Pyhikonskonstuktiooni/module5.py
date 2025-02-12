@@ -54,8 +54,10 @@ if NameKey.isupper() and NameKey.lower()=="juku":
         vanus=int(input("Kui vana sa oled? "))
         if vanus<0 or vanus>100:
             pilet="!!!"
+            print(pilet)
         if vanus<6:
             pilet="Tasuta"
+            print(pilet)
         elif vanus<=14:
             pilet="lastepilet"
             print(pilet)
