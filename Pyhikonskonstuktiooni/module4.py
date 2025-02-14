@@ -1,6 +1,16 @@
+# YUHHHUUUU FIXING MISTAKES AGAIN
+
+# black list num = float(input("Enter a number: ")) if num < 0: print("The number is negative. ") else: print("The number is not negative.
+
+# importing math stuff like a pro ;)
 from math import *
 print("Ruudu karakteristikud")
+
+
 a=float(input("Sisesta ruudu külje pikkus => "))
+# checking
+if a <= 0: print("The number is negative. "), exit()
+else: print("Nice. ")
 S=a**2
 print("Ruudu pindala", S)
 P=4*a
@@ -9,8 +19,14 @@ di=a*sqrt(2)
 print("Ruudu diagonaal", round(di,2))
 print()
 print("Ristküliku karakteristikud")
+# checking
 b=float(input("Sisesta ristküliku 1. külje pikkus => "))
+if b <= 0: print("The number is negative. "), exit()
+else: print("Nice. ")
+# checking
 c=float(input("Sisesta ristküliku 2. külje pikkus => "))
+if c <= 0: print("The number is negative. ")
+else: print("Nice. ")
 S=b*c
 print("Ristküliku pindala", S)
 P=2*(b+c)
@@ -19,7 +35,10 @@ di=sqrt(b**2+c**2)
 print("Ristküliku diagonaal", round(di,2))
 print()
 print("Ringi karakteristikud")
+# checking
 r=float(input("Sisesta ringi raadiusi pikkus => "))
+if r <= 0: print("The number is negative. "), exit()
+else: print("Nice. ")
 d=2+r
 print("Ringi läbimõõt", d)
 C=pi*r**2
