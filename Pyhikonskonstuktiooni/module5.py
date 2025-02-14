@@ -89,8 +89,8 @@ if (MrNimi1 == "Maksim" and MrNimi2 == "Nikita") or (MrNimi1 == "Nikita" and MrN
 else:
     print("Vale")
 
-
-
-
-
-
+# ülisane 3
+print("Answer with Yes [Y], No [N]")
+küsimus = input("Kas te tahete remondi tegemise soov?")
+if küsimus == "Y":
+if küsimus == "N": print(":_<")
