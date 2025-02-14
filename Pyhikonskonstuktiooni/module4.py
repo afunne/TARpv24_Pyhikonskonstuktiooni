@@ -6,42 +6,48 @@
 from math import *
 print("Ruudu karakteristikud")
 
-
-a=float(input("Sisesta ruudu külje pikkus => "))
+# (a > 0 and b > 0 and c > 0, r > 0):
+#     print("lähe. ")
+#     else:
+#         print("Vale. ")
+try:
+    a=float(input("Sisesta ruudu külje pikkus => "))
+    # checking
+    if a < 0: print("The number is negative. "), exit()
+    else: print("Nice. ")
+    S=a**2
+    print("Ruudu pindala", S)
+    P=4*a
+    print("Ruudu ümbermõõt", P)
+    di=a*sqrt(2)
+    print("Ruudu diagonaal", round(di,2))
+    print()
+    print("Ristküliku karakteristikud")
+    # checking
+    b=float(input("Sisesta ristküliku 1. külje pikkus => "))
+    if b < 0: print("The number is negative. "), exit()
+    else: print("Nice. ")
+    # checking
+    c=float(input("Sisesta ristküliku 2. külje pikkus => "))
+    if c <= 0: print("The number is negative. ")
+    else: print("Nice. ")
+    S=b*c
+    print("Ristküliku pindala", S)
+    P=2*(b+c)
+    print("Ristküliku ümbermõõt", P)
+    di=sqrt(b**2+c**2)
+    print("Ristküliku diagonaal", round(di,2))
+    print()
+    print("Ringi karakteristikud")
 # checking
-if a <= 0: print("The number is negative. "), exit()
-else: print("Nice. ")
-S=a**2
-print("Ruudu pindala", S)
-P=4*a
-print("Ruudu ümbermõõt", P)
-di=a*sqrt(2)
-print("Ruudu diagonaal", round(di,2))
-print()
-print("Ristküliku karakteristikud")
-# checking
-b=float(input("Sisesta ristküliku 1. külje pikkus => "))
-if b <= 0: print("The number is negative. "), exit()
-else: print("Nice. ")
-# checking
-c=float(input("Sisesta ristküliku 2. külje pikkus => "))
-if c <= 0: print("The number is negative. ")
-else: print("Nice. ")
-S=b*c
-print("Ristküliku pindala", S)
-P=2*(b+c)
-print("Ristküliku ümbermõõt", P)
-di=sqrt(b**2+c**2)
-print("Ristküliku diagonaal", round(di,2))
-print()
-print("Ringi karakteristikud")
-# checking
-r=float(input("Sisesta ringi raadiusi pikkus => "))
-if r <= 0: print("The number is negative. "), exit()
-else: print("Nice. ")
-d=2+r
-print("Ringi läbimõõt", d)
-C=pi*r**2
-print("Ringjoone pikkus", round(C,2))
-S=pi*r*2
-print("Ringi pindala", round(S,2))
+    r=float(input("Sisesta ringi raadiusi pikkus => "))
+    if r < 0: print("The number is negative. "), exit()
+    else: print("Nice. ")
+    d=2+r
+    print("Ringi läbimõõt", d)
+    C=pi*r**2
+    print("Ringjoone pikkus", round(C,2))
+    S=pi*r*2
+    print("Ringi pindala", round(S,2))
+except Exception as e:
+    print("vale ", e)
