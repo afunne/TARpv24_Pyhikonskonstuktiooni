@@ -77,17 +77,20 @@ else:
 
 #ülasane 2
 from random import *
-MrNimiOne=input("Mis on õige nimi on? ")
-MrNimiTwo=input("Mis on õige nimi on? ")
 
-arv=randint(0,1)
+MrNimi1 = input("Arva, kes on minu esimene pindinabrid: ")
+MrNimi2 = input("Arva, kes on minu teine pindinabrid: ")
 
-if MrNimiOne=="Maksim" and MrNimiTwo=="Nikita":
-    print("YAY, hea töö!")
-elif arv==0:
-    print(" ")
+arv = random.randint(0,1)
 
-    
+
+if (MrNimi1 == "Maksim" and MrNimi2 == "Nikita") or (MrNimi1 == "Nikita" and MrNimi2 == "Maksim"):
+    print("Õige")
+else:
+    print("Vale")
+
+
+
 
 
 
