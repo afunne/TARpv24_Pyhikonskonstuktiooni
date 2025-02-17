@@ -26,6 +26,7 @@
     <Compile Include="module3.py" />
     <Compile Include="module4.py" />
     <Compile Include="module5.py" />
+    <Compile Include="module6.py" />
     <Compile Include="Pyhikonskonstuktiooni.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
