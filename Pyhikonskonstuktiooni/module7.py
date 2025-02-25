@@ -224,6 +224,7 @@ for j in range(10):
 print()
 
 # ülisane 16
+# somehow after pressing tab it gave me the half of the code idk how :P
 n = 9
 for i in range(1, n + 1):
     for j in range(1, n + 1):
@@ -232,3 +233,24 @@ for i in range(1, n + 1):
         else:
             print(0, end=' ')
     print()
+
+# ülisane 17
+for i in range(1, 10):
+    print(f"2*{i}={2 * i}")
+
+# ülisane 18
+for num in range(20, 51):
+    if num % 3 == 0 and num % 5 != 0:
+        print(num)
+
+# ülisane 19
+for num in range(35, 88):
+    if num % 7 in {1, 2, 5}:
+        print(num)
+
+# ülisane 20
+total = 0
+for num in range(1, 51):
+    if num % 5 == 0 or num % 7 == 0:
+        total += num
+print("Summa:", total)
