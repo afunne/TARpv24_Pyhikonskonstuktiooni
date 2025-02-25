@@ -116,9 +116,45 @@ while True:
         print("Vale formaat")
 
 # ülisane 7
+while True:
+    try:
+        A = int(input("Sisestage intervalli algus: "))
+        B = int(input("Sisestage intervalli lõpp: "))
+        if A < B:
+            K = int(input("Sisestage arv K: "))
+            if K > 0:
+                for i in range(A, B + 1):
+                    if i % K == 0:
+                        print(i, end=" ")
+                        print()
+                break
+            else:
+                print("K peab olema rohkem kui 0")
+        else:
+            print("lõpp peab olema rohkem kui algus")
+    except:
+        print("Ainult numbrid")
 
+# ülisane 8
+print("Tollid | Sentimeetrit")
+print("------------------")
+for i in range(1, 21):
+    cm = i * 2.5
+    print(f"{i} | {cm}")
 
+# ülisane 9
+while True:
+    try:
+        S = float(input("Sisestage esialgne hoiuse summa: "))
+        N = int(input("Sisesta aastate arv: "))
 
+        for _ in range(N):
+            S *= 1.03 # 3%
+
+        print(f"Hoiuse summa pärast {N} aastat: {round(S,2)} eurot")
+        break
+    except:
+        print("Ainult numbrid")
 
 # ülisane 10
 for J in range(10):
@@ -130,7 +166,54 @@ for J in range(10):
         print(f"Suurem on {a2}")
 print()
 
+# ülisane 11
+import random
 
+K = random.randint(1, 50)
+print(f"Genereeritud number: {K}")
+
+product = 1
+
+for num in range(11, 100, 2):
+    if num % K == 0:
+        product *= num
+
+if product>1:
+    print(f"Kahekohaliste paaritute arvude korrutis, mis on jagatavad {K}: {product}")
+else:
+    print(f"Ei ole kahekohalisi paarituid numbreid, mis on jagatavad {K}.")
+
+# ülisane 12
+N = int(input("Sisestage heinategijate arv: "))
+m = int(input("Sisestage esimese heinaküünla tööaeg (tundid): "))
+
+total_hours = 0
+for i in range(N):
+    total_hours = m + (i * 10 / 60)
+
+print(f"Kogu meeskond töötas {round(total_hours)} tundi.")
+
+# ülisane 13
+count = 0
+total_sum = 0
+
+for number in range(100, 1001):
+    if number % 7 == 0:
+        count += 1
+        total_sum += number
+print(f"jagatavate arvude arv: {count}")
+print(f"jagatavate arvude summa: {total_sum}")
+
+# ülisane 14
+import random
+N = random.randint(1, 20)
+product = 1
+
+for i in range(1, N + 1):
+    product *= i
+
+print(f"Juhuslik number N: {N}")
+print(f"Numbrite 1 kuni {N}: {product}")
 
 
 # ülisane 15
@@ -139,3 +222,13 @@ for j in range(10):
         print(i, end=" ")
     print()
 print()
+
+# ülisane 16
+n = 9
+for i in range(1, n + 1):
+    for j in range(1, n + 1):
+        if j == i:
+            print(i, end=' ')
+        else:
+            print(0, end=' ')
+    print()
