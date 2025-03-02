@@ -23,7 +23,11 @@ while True:
             else:
                 print("Vale!")
                 counterfalse+=1
-            
+        TaseKüsimus2=input("kas soovite jätkata?: ")
+        if TaseKüsimus2 == "jah":
+           TaseKüsimus=input("Panna sinu tase: ")
+        elif TaseKüsimus2 == "ei":
+            break
     except:
         print("BRUH")
 
@@ -44,11 +48,14 @@ while True:
             if vastus==eval(str(a)+valitud_tehe+str(b)):
                 print("Tore!")
                 countertrue+=1
-                break
             else:
                 print("Vale!")
                 counterfalse+=1
-                break
+        TaseKüsimus2=input("kas soovite jätkata?: ")
+        if TaseKüsimus2 == "jah":
+           TaseKüsimus=input("Panna sinu tase: ")
+        elif TaseKüsimus2 == "ei":
+            break
     except:
         print("BRUH")
 
@@ -68,18 +75,27 @@ while True:
             if vastus==eval(str(a)+valitud_tehe+str(b)):
                 print("Tore!")
                 countertrue+=1
-                break
             else:
                 print("Vale!")
                 counterfalse+=1
-                break
+        TaseKüsimus2=input("kas soovite jätkata?: ")
+        if TaseKüsimus2 == "jah":
+           TaseKüsimus=input("Panna sinu tase: ")
+        elif TaseKüsimus2 == "ei":
+            break
+
     except:
         print("BRUH")
 
 print(f"Õige vastud = {countertrue} and vale vastud {counterfalse}.")
 
 HindProts=round((countertrue/counterfalse) *100)
-# and folks, I will end everything at home ;P
-
-
-
+print(f"Protsent on {HindProts}%")
+if HindProts < 60:
+    print("Hinne 2")
+elif 60 <= HindProts < 75:
+    print("Hinne 3")
+elif 75 <= HindProts < 90:
+    print("Hinne 4")
+else:
+    print("Hinne 5")
