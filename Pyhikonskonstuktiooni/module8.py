@@ -1,3 +1,6 @@
+# btw main code starts at 277 line
+
+
 # from random import *
 
 # TaseKüsimus=input("Panna sinu tase: ")
@@ -182,79 +185,177 @@
 # I forgot we didn't pass defenitions but I will still hold these lines of codes there, sooooo...
 # I am changing a code a little bit
 
-from random import choice, randint
+# from random import choice, randint
 
-# Inspared by my classmates
-operators = {
-    "+": lambda a, b: a + b,
-    "-": lambda a, b: a - b,
-    "*": lambda a, b: a * b,
-    "/": lambda a, b: a / b if b != 0 else "undefined",
-    "**": lambda a, b: a ** b
-}
+# # Inspared by my classmates
+# operators = {
+#     "+": lambda a, b: a + b,
+#     "-": lambda a, b: a - b,
+#     "*": lambda a, b: a * b,
+#     "/": lambda a, b: a / b if b != 0 else "undefined",
+#     "**": lambda a, b: a ** b
+# }
+
+# # Initialize counters
+# countertrue = 0
+# counterfalse = 0
+
+# # Main loop
+# while True:
+#     TaseKüsimus = input("Panna sinu tase (Tase 1, Tase 2, Tase 3): ")
+#     if TaseKüsimus not in ["Tase 1", "Tase 2", "Tase 3"]:
+#         print("Vigane tase! Palun vali Tase 1, Tase 2 või Tase 3.")
+#         continue
+#     # Determine levels
+#     if TaseKüsimus == "Tase 1":
+#         tehed = ["+", "-"]
+#     elif TaseKüsimus == "Tase 2":
+#         tehed = ["+", "-", "*", "/"]
+#     elif TaseKüsimus == "Tase 3":
+#         tehed = ["+", "-", "*", "/", "**"]
+# TaseKüsimus2 = input("Kas soovite jätkata? (jah/ei): ")
+# if TaseKüsimus2.lower() != "jah":
+#     kuipalju=input(int("Mitu?"))
+#     if 
+
+
+
+#     # Doing what classmate would do
+# while True:
+#     valitud_tehe = choice(tehed)
+#     a = randint(0, 5)
+#     b = randint(0, 5)
+
+#     # if B = 0, im going to explode in 3 seconds (without it, it doesn't work) P.S microsoft support helped me out here!
+#     if valitud_tehe == "/" and b == 0:
+#         b = 1  # Avoid division by zero
+
+#     # Display the problem
+#     print(f"Millega võrdub {a} {valitud_tehe} {b} =")
+#     try:
+#         vastus = float(input("Anna vastus: "))  # Allow float for division
+#         correct_answer = operators[valitud_tehe](a, b)
+
+#         # Check if the answer is correct
+#         if vastus == correct_answer:
+#             print("Tore!")
+#             countertrue += 1
+#         else:
+#             print(f"Vale! Õige vastus on {correct_answer}.")
+#             counterfalse += 1
+#     except:
+#         print("Vigane sisend! Palun sisesta number.")
+
+#     # Ask if the user wants to continue
+#     TaseKüsimus2 = input("Kas soovite jätkata? (jah/ei): ")
+#     if TaseKüsimus2.lower() != "jah":
+#         break
+
+# # Calculation...
+# print(f"Õige vastud = {countertrue} ja vale vastud = {counterfalse}.")
+
+# if counterfalse == 0:
+#     HindProts = 100  # Avoid division by zero
+# else:
+#     HindProts = round((countertrue / counterfalse) * 100)
+
+# print(f"Protsent on {HindProts}%")
+
+# if HindProts < 60:
+#     print("Hinne 2")
+# elif 60 <= HindProts < 75:
+#     print("Hinne 3")
+# elif 75 <= HindProts < 90:
+#     print("Hinne 4")
+# else:
+#     print("Hinne 5")
+
+
+
+
+
+from random import choice, randint
 
 # Initialize counters
 countertrue = 0
 counterfalse = 0
 
-# Main loop
+# User puts a number of levels
 while True:
-    TaseKüsimus = input("Panna sinu tase (Tase 1, Tase 2, Tase 3): ")
-    if TaseKüsimus not in ["Tase 1", "Tase 2", "Tase 3"]:
+    TaseKüsimus = input("Vali tase (Tase 1, Tase 2, Tase 3): ")
+    if TaseKüsimus in ["Tase 1", "Tase 2", "Tase 3"]:
+        break
+    else:
         print("Vigane tase! Palun vali Tase 1, Tase 2 või Tase 3.")
-        continue
-    # Determine levels
-    if TaseKüsimus == "Tase 1":
-        tehed = ["+", "-"]
-    elif TaseKüsimus == "Tase 2":
-        tehed = ["+", "-", "*", "/"]
-    elif TaseKüsimus == "Tase 3":
-        tehed = ["+", "-", "*", "/", "**"]
-TaseKüsimus2 = input("Kas soovite jätkata? (jah/ei): ")
-if TaseKüsimus2.lower() != "jah":
-    kuipalju=input(int("Mitu?"))
-    if 
 
-
-
-    # Doing what classmate would do
+# Ask the user how many problems they want to solve
 while True:
-    valitud_tehe = choice(tehed)
-    a = randint(0, 5)
-    b = randint(0, 5)
+    try:
+        num_problems = int(input("Mitu ülesannet soovid lahendada? "))
+        if num_problems > 0:
+            break
+        else:
+            print("Palun sisesta positiivne arv!")
+    except ValueError:
+        print("Vigane sisend! Palun sisesta number.")
 
-    # if B = 0, im going to explode in 3 seconds (without it, it doesn't work) P.S microsoft support helped me out here!
+# Define operators for each level
+if TaseKüsimus == "Tase 1":
+    tehed = ["+", "-"]
+elif TaseKüsimus == "Tase 2":
+    tehed = ["+", "-", "*", "/"]
+elif TaseKüsimus == "Tase 3":
+    tehed = ["+", "-", "*", "/", "**"]
+
+# Main loop
+for i in range(num_problems):
+    # Randomly select an operator and generate numbers
+    valitud_tehe = choice(tehed)
+    a = randint(0, 10)
+    b = randint(0, 10)
+
+    # Ensure b is not 0 for division
     if valitud_tehe == "/" and b == 0:
         b = 1  # Avoid division by zero
 
-    # Display the problem
+    # Displaying the problem
     print(f"Millega võrdub {a} {valitud_tehe} {b} =")
-    try:
-        vastus = float(input("Anna vastus: "))  # Allow float for division
-        correct_answer = operators[valitud_tehe](a, b)
+    while True:
+        try:
+            vastus = float(input("Anna vastus: "))  # Allow float for division
+            break
+        except ValueError:
+            print("Vigane sisend! Palun sisesta number.")
 
-        # Check if the answer is correct
-        if vastus == correct_answer:
-            print("Tore!")
-            countertrue += 1
-        else:
-            print(f"Vale! Õige vastus on {correct_answer}.")
-            counterfalse += 1
-    except:
-        print("Vigane sisend! Palun sisesta number.")
+    # Calculate the correct answer
+    if valitud_tehe == "+":
+        correct_answer = a + b
+    elif valitud_tehe == "-":
+        correct_answer = a - b
+    elif valitud_tehe == "*":
+        correct_answer = a * b
+    elif valitud_tehe == "/":
+        correct_answer = a / b
+    elif valitud_tehe == "**":
+        correct_answer = a ** b
 
-    # Ask if the user wants to continue
-    TaseKüsimus2 = input("Kas soovite jätkata? (jah/ei): ")
-    if TaseKüsimus2.lower() != "jah":
-        break
+    # Check if the answer is correct
+    if vastus == correct_answer:
+        print("Tore!")
+        countertrue += 1
+    else:
+        # bro, did you fr do it wrong? nah its okay... I do mistakes as well :<
+        print(f"Vale! Õige vastus on {correct_answer}.")
+        counterfalse += 1
 
-# Calculation...
+# Calculate and display results, pls
 print(f"Õige vastud = {countertrue} ja vale vastud = {counterfalse}.")
 
-if counterfalse == 0:
-    HindProts = 100  # Avoid division by zero
+if countertrue + counterfalse == 0:
+    HindProts = 0  # Avoid division by zero (without it, it gives me errors for some reason)
 else:
-    HindProts = round((countertrue / counterfalse) * 100)
+    HindProts = round(countertrue / (countertrue + counterfalse)) * 100
+    # the reason why it looks like this is because it gives me mistakes *(defenition of 0, yeah?)
 
 print(f"Protsent on {HindProts}%")
 
@@ -266,4 +367,3 @@ elif 75 <= HindProts < 90:
     print("Hinne 4")
 else:
     print("Hinne 5")
-

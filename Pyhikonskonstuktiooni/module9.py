@@ -1,61 +1,53 @@
 #abs()
 #sleep()
-print("*** MÄNG ARVUTIGA ***")
+print("*** Arvude mäng ***")
 print()
 #'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 while 1:
     try:
-        # you dont have to put brackets before abs
-        a = abs(int(input("sisesta täisarv => ")))
+        a = abs(int(input("Sisestage täisarv => "))) # Sulgude puudumine
         break
     except ValueError:
-         print("Это не целое число")
+         print("See ei ole täisarv")
 #'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 if a==0:
-    print("nuliga ei tööta")
+    print("Ei ole mõtet teha midagi nulliga.")
 else:
 #'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    print("Определяем, сколько в числе чётных и сколько нечётных цифр")
+    print("Määrame, mitu paarilist ja mitu paaritut numbrit on numbris.")
     print()
-    c=b=a
-    paaris = 0
-    paaritu = 0
-    while b > 0:
-          # we use = then we are setting variables, we are using == to follow instructions 
-            if b % 2 == 0:
-                    paaris += 1
-            else:
-                    paaritu += 1
-            b = b // 10
+    c=b=a # igal on üks =
+    paaris = 0 # üks =
+    paaritu = 0 # üks =
+    while b > 0: # Peab olema :
+        if b % 2 == 0: # kaks =
+            paaris += 1 # Vale =+ 
+        else:
+            paaritu += 1 # Vale =+ 
+        b = b // 10 # proovid - 164. 4, 6, 1
     
-    # correct syntaks ( print("Чётных цифр:", paaris))
-    print("Чётных цифр:", paaris) 
-    print("Нечётных цифр:", paaritu)
+    print(f"Paarilised numbrid: {paaris}") # format
+    print(f"Paaritu arvud: {paaritu}") # format
     print()
 #''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-for i in range(50):
-
-#b becomes useless
-    print("*Переворачиваем* введённое число")
+    print("Sisestatud numbri *ümberpööramine*")
     print()
     b=0
-    while a > 0:
+    while a > 0: # Peab olema :
         number = a % 10
         a = a // 10
         b = b * 10
-        b += number
-    print("*Перевёрнутое* число", b)
+        b += number # Vale =+ 
+    print("*Ümberpöördatud* number", b)
     print()
 #''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    print("Проверяем гипотезу Сиракуз")
+    print("Syracuse'i hüpoteesi testimine.")
     print()
-
     while c != 1:
-            if c % 2 == 0:
-                print('{:>4}'.format(round(c))," - Paaris arv, Jagame 2.")
-                c = c / 2
-            else:
-                print('{:>4}'.format(round(c))," - Paaritu arv. Korrutame 3, liidame 1 ja jagame 2.")
-                c = (3*c + 1) / 2
-    print()
-    print("Гипотеза верна")
+        if c % 2 == 0: # kaks =
+            print(f"{round(c)} - paariline arv. Jagage 2ga.", end="\n") # end uus rida ja format
+            c = c / 2 # üks =
+        else:
+            print(f"{round(c)} - paaritu arv. Korrutame 3, lisame 1 ja jagame 2ga.", end="\n") # end uus rida ja format  
+            c = (3*c + 1) / 2 # üks =
+    print("1 - Hüpotees on õige")
