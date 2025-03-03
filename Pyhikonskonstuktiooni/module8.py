@@ -84,6 +84,9 @@
 # else:
 #     print("Hinne 5")
 
+
+
+
 # I am rewrting this whole code because this one just doesn't work.
 # I borrowed some ideas from one of my classmates and from flowchart and official guides from microsoft
 
@@ -194,7 +197,7 @@ operators = {
 countertrue = 0
 counterfalse = 0
 
-# Main game loop
+# Main loop
 while True:
     TaseKüsimus = input("Panna sinu tase (Tase 1, Tase 2, Tase 3): ")
     if TaseKüsimus not in ["Tase 1", "Tase 2", "Tase 3"]:
@@ -207,13 +210,20 @@ while True:
         tehed = ["+", "-", "*", "/"]
     elif TaseKüsimus == "Tase 3":
         tehed = ["+", "-", "*", "/", "**"]
+TaseKüsimus2 = input("Kas soovite jätkata? (jah/ei): ")
+if TaseKüsimus2.lower() != "jah":
+    kuipalju=input(int("Mitu?"))
+    if 
+
+
 
     # Doing what classmate would do
+while True:
     valitud_tehe = choice(tehed)
     a = randint(0, 5)
     b = randint(0, 5)
 
-    # if B = 0, im going to explode in 3 seconds
+    # if B = 0, im going to explode in 3 seconds (without it, it doesn't work) P.S microsoft support helped me out here!
     if valitud_tehe == "/" and b == 0:
         b = 1  # Avoid division by zero
 
@@ -230,7 +240,7 @@ while True:
         else:
             print(f"Vale! Õige vastus on {correct_answer}.")
             counterfalse += 1
-    except ValueError:
+    except:
         print("Vigane sisend! Palun sisesta number.")
 
     # Ask if the user wants to continue
@@ -244,7 +254,7 @@ print(f"Õige vastud = {countertrue} ja vale vastud = {counterfalse}.")
 if counterfalse == 0:
     HindProts = 100  # Avoid division by zero
 else:
-    HindProts = round((countertrue / (countertrue + counterfalse)) * 100)
+    HindProts = round((countertrue / counterfalse) * 100)
 
 print(f"Protsent on {HindProts}%")
 
@@ -256,3 +266,4 @@ elif 75 <= HindProts < 90:
     print("Hinne 4")
 else:
     print("Hinne 5")
+
