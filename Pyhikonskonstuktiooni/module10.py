@@ -87,5 +87,44 @@ while True:
     except:
         print("Nuh uh")
 
-print("3 sõprat tulevad  restorani jurresse.")
-sõberÜksAastat = float(input("Kui vannad ta on?: "))
+# lõpilne ;p
+print("3 sõprat tulevad  restorani jurresse ja sealpeal on roboot.")
+tuli = 0
+try:
+    sõber1 = float(input("Kui vannad ta on?: "))
+    if sõber1 >= 16:
+        print("Tuli!")
+        tuli += 1 # dude im suprsied I somehow though of that mgl
+    else:
+        print("ära tuli!")
+except:
+    print("DANG, ma küsisin astaa mitte nimi...")
+
+try:
+    sõber2 = float(input("Kui vannad ta on?: "))
+    if sõber2 >= 16:
+        print("Tuli!")
+        tuli += 1
+    else:
+        print("ära tuli!")
+except:
+    print("DANG, ma küsisin astaa mitte nimi...")
+
+try:
+    sõber3 = float(input("Kui vannad ta on?: "))
+    if sõber3 >= 16:
+        print("Tuli!")
+        tuli += 1
+    else:
+        print("ära tuli!")
+except:
+    print("DANG, ma küsisin astaa mitte nimi...")
+
+if tuli == 3:
+    print("Kõik tulevad! yay! :D")
+elif tuli == 2:
+    print("Kaks sõbrad tulevad... :<")
+elif tuli == 1:
+    print("Minu arust see on väga ebahuvitav... :_<")
+elif tuli == 0:
+    print("Mitte keegi tulenud. :|")
