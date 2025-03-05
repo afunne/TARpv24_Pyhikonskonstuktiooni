@@ -14,11 +14,14 @@ print("Summa on: ", vastus)
 
 #M variant (I like this one more tbh)
 vastus=0
-p=int(input("Mitu korda kordame?"))
-for i in range(p):
-    arv=float(input("Sisesta arv: "))
-    if arv<0: vastus+=arv
-print("Summa on: ", vastus)
+try:
+    p=int(input("Mitu korda kordame?"))
+    for i in range(p):
+        arv=float(input("Sisesta arv: "))
+        if arv<0: vastus+=arv
+    print("Summa on: ", vastus)
+except:
+    print("Nuh uh")
 
 
 
@@ -69,17 +72,20 @@ print("Kõik kotletid on praetud!")
 
 #minu v4
 while True:
-    a = float(input("a: "))
-    b = float(input("b: "))
-    if a == b: print("Väle! Proovi uuesti!")
-    elif a != b:
-        print("Õige")
-        if a>b:
-            print(f"V= {a} suurem kui {b}")
-            break
-        elif a<b:
-            print(f"V= {b} suurem kui {a}")
-            break
+    try:
+        a = float(input("a: "))
+        b = float(input("b: "))
+        if a == b: print("Väle! Proovi uuesti!")
+        elif a != b:
+            print("Õige")
+            if a>b:
+                print(f"V= {a} suurem kui {b}")
+                break
+            elif a<b:
+                print(f"V= {b} suurem kui {a}")
+                break
+    except:
+        print("Nuh uh")
 
 print("3 sõprat tulevad  restorani jurresse.")
 sõberÜksAastat = float(input("Kui vannad ta on?: "))
