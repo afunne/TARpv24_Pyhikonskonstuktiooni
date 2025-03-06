@@ -12,46 +12,49 @@
 
 
 
-# #ul 1
-# try:
-#     SkvorecProV=int(input("Panna koju number: "))
+#ul 1
+try:
+    SkvorecProV=int(input("Panna koju number: "))
 
-#     for i in range(SkvorecProV):
-#         print(" ----- ")
-#         print("|  O  |")
-#         print("!  -  !")
-#         print(" ----- ")
-# except:
-#     print("Nuh uh")
+    for i in range(SkvorecProV):
+        print(" ----- ")
+        print("|  O  |")
+        print("!  -  !")
+        print(" ----- ")
+except:
+    print("Nuh uh")
 
-# #ul 2
-# try:
-#     n = int(input("Panna n: "))
-#     stepen = int(input("Panna **"))
+#ul 2
+try:
+    n = int(input("Panna n: "))
+    stepen = int(input("Panna **"))
 
-#     while True:
-#         koos=n**stepen
-#         if koos > n**3:
-#             print("Proovi uuesti!")
-#             n = int(input("Panna n: "))
-#             stepen = int(input("Panna **"))
-#         else:
-#             print("Täname!")
-#             print(koos)
-#             break
-# except:
-#     print("Nuh uh")
+    while True:
+        koos=n**stepen
+        if koos > n**3:
+            print("Proovi uuesti!")
+            n = int(input("Panna n: "))
+            stepen = int(input("Panna **"))
+        else:
+            print("Täname!")
+            print(koos)
+            break
+except:
+    print("Nuh uh")
 
 # #ul 3
 
 from random import *
-õpilased=int(input("Panna mitu õpilased on: "))
-# õpilased=randrange(25, 36)
+from math import *
+totalsum = 0
+õpilased=randrange(25, 36)
 # grades = randrange(2, 6)
 for i in range(õpilased):
      grades = randrange(2, 6)
      print(grades, end=" ")
-
+     totalsum += grades
+average_grade =totalsum/õpilased
+print(f"keske hind on: {average_grade:.2f}")
 # for i in range(õpilased):
 # grades = [randrange(2, 6) for i in range(õpilased)] # this only one problem which I have been having with this uhhhhhhh
 # for i in range(õpilased):
@@ -59,9 +62,7 @@ for i in range(õpilased):
 # for i in range(õpilased):
 
 print(f"õpilased on: {õpilased}")
-average_grade = (grades + õpilased) / õpilased
-print(f"Hinnad on: {grades}")
-print(f"keske hind on: {average_grade:.2f}") # I found out in forums that adding :.2f is just like rounding, yay :D 
+print(f"keske hind on: {average_grade:.2f}") # I found out in forums that adding :.2f is just like rounding, yay :D
 
 #ul 4
 # I took some examples from the channel called "Bro Code"
