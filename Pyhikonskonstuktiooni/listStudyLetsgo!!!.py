@@ -58,4 +58,43 @@ sõne_list.sort(reverse=True, key=function)
 print(sõne_list)
 
 # work that I have to finish at home
+# just a test
+word = "andestav"
+word_list = list(word)
+print(word_list)
+# first
+word_list.S.title()
+print(word_list)
+# second
+word_list.S.capitalize()
+print(word_list)
+# third
+if word_list.isnumeric():
+    print("YAY!")
+else:
+    print("See on kõik, MA plahvatan!")
+# fourth
+word_list.capitalize()
+print(word_list)
+# fifth
+word_list.swapcase()
+print(word_list)
+# sixth
+word_list.rjust(7, fillchar="scatman")
+print(word_list)
+# seventh
+word_list.ljust(7, fillchar="scatman")
+print(word_list)
+# eight
+word_list.center(20)
+print(word_list)
+# ninth
+word_list.zfill(10)
+print(word_list)
+# tenth
+if word_list.S.isspace():
+    print("YAY!")
+else:
+    print("See on kõik, MA plahvatan!")
+
 
