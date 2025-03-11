@@ -98,331 +98,395 @@
 #     print("See on kõik, MA plahvatan!")
 
 
-print("1. title")
-print("2. capitalize")
-print("3. isnumeric")
-print("4. len")
-print("5. swapcase")
-print("6. rjust")
-print("7. ljust")
-print("8. center")
-print("9. zfill")
-print("10. isspace")
-print()
+# print("1. title")
+# print("2. capitalize")
+# print("3. isnumeric")
+# print("4. len")
+# print("5. swapcase")
+# print("6. rjust")
+# print("7. ljust")
+# print("8. center")
+# print("9. zfill")
+# print("10. isspace")
+# print()
 
-try:
-    question_func=int(input("Sisesta milline funktion te tahate?: "))
-    if question_func > 10 & question_func <= 0:
-        print("Vale! Provi uuesti")
-    else:
-        print("Väga hea!")
-except:
-    print(">:/")
+# try:
+#     question_func=int(input("Sisesta milline funktion te tahate?: "))
+#     if question_func > 10 & question_func <= 0:
+#         print("Vale! Provi uuesti")
+#     else:
+#         print("Väga hea!")
+# except:
+#     print(">:/")
+
+# while True:
+#             if question_func==1:
+#                 worduser=input("Sisesta sinu sõna: ")
+#                 print(worduser)
+#                 worduser_list = list(worduser)
+#                 worduser_list.title()
+#                 print(worduser_list)
+#                 IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
+#                 if IWANTMOOORE == "ja":
+#                     print("1. title")
+#                     print("2. capitalize")
+#                     print("3. isnumeric")
+#                     print("4. len")
+#                     print("5. swapcase")
+#                     print("6. rjust")
+#                     print("7. ljust")
+#                     print("8. center")
+#                     print("9. zfill")
+#                     print("10. isspace")
+#                     print()
+#                     try:
+#                         question_func=int(input("Sisesta milline funktion te tahate?: "))
+#                         if question_func > 10 & question_func <= 0:
+#                             print("Vale! Provi uuesti")
+#                         else:
+#                             print("Väga hea!")
+#                     except:
+#                         print(">:/")
+#                 elif IWANTMOOORE == "ei":
+#                     break
+
+#             elif question_func==2:
+#                 worduser=input("Sisesta sinu sõna: ")
+#                 print(worduser)
+#                 worduser_list = list(worduser)
+#                 worduser_list.capitalize()
+#                 print(worduser_list)
+#                 IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
+#                 if IWANTMOOORE == "ja":
+#                     print("1. title")
+#                     print("2. capitalize")
+#                     print("3. isnumeric")
+#                     print("4. len")
+#                     print("5. swapcase")
+#                     print("6. rjust")
+#                     print("7. ljust")
+#                     print("8. center")
+#                     print("9. zfill")
+#                     print("10. isspace")
+#                     print()
+#                     try:
+#                         question_func=int(input("Sisesta milline funktion te tahate?: "))
+#                         if question_func > 10 & question_func <= 0:
+#                             print("Vale! Provi uuesti")
+#                         else:
+#                             print("Väga hea!")
+#                     except:
+#                         print(">:/")
+#                 elif IWANTMOOORE == "ei":
+#                     break
+
+#             elif question_func==3:
+#                 worduser=input("Sisesta sinu sõna (proovi kirjutamine numberidega ja numprideta): ")
+#                 print(worduser)
+#                 worduser_list = list(worduser)
+#                 if worduser_list.isnumeric():
+#                     print("YAY!")
+#                 else:
+#                     print("See on kõik, MA plahvatan!")
+#                 print(worduser_list)
+#                 IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
+#                 if IWANTMOOORE == "ja":
+#                     print("1. title")
+#                     print("2. capitalize")
+#                     print("3. isnumeric")
+#                     print("4. len")
+#                     print("5. swapcase")
+#                     print("6. rjust")
+#                     print("7. ljust")
+#                     print("8. center")
+#                     print("9. zfill")
+#                     print("10. isspace")
+#                     print()
+#                     try:
+#                         question_func=int(input("Sisesta milline funktion te tahate?: "))
+#                         if question_func > 10 & question_func <= 0:
+#                             print("Vale! Provi uuesti")
+#                         else:
+#                             print("Väga hea!")
+#                     except:
+#                         print(">:/")
+#                 elif IWANTMOOORE == "ei":
+#                     break
+
+#             elif question_func==4:
+#                 worduser=input("Sisesta sinu sõna: ")
+#                 print(worduser)
+#                 worduser_list = list(worduser)
+#                 len(worduser_list)
+#                 print(worduser_list)
+#                 IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
+#                 if IWANTMOOORE == "ja":
+#                     print("1. title")
+#                     print("2. capitalize")
+#                     print("3. isnumeric")
+#                     print("4. len")
+#                     print("5. swapcase")
+#                     print("6. rjust")
+#                     print("7. ljust")
+#                     print("8. center")
+#                     print("9. zfill")
+#                     print("10. isspace")
+#                     print()
+#                     try:
+#                         question_func=int(input("Sisesta milline funktion te tahate?: "))
+#                         if question_func > 10 & question_func <= 0:
+#                             print("Vale! Provi uuesti")
+#                         else:
+#                             print("Väga hea!")
+#                     except:
+#                         print(">:/")
+#                 elif IWANTMOOORE == "ei":
+#                     break
+
+#             elif question_func==5:
+#                 worduser=input("Sisesta sinu sõna: ")
+#                 print(worduser)
+#                 worduser_list = list(worduser)
+#                 worduser_list.swapcase()
+#                 print(worduser_list)
+#                 IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
+#                 if IWANTMOOORE == "ja":
+#                     print("1. title")
+#                     print("2. capitalize")
+#                     print("3. isnumeric")
+#                     print("4. len")
+#                     print("5. swapcase")
+#                     print("6. rjust")
+#                     print("7. ljust")
+#                     print("8. center")
+#                     print("9. zfill")
+#                     print("10. isspace")
+#                     print()
+#                     try:
+#                         question_func=int(input("Sisesta milline funktion te tahate?: "))
+#                         if question_func > 10 & question_func <= 0:
+#                             print("Vale! Provi uuesti")
+#                         else:
+#                             print("Väga hea!")
+#                     except:
+#                         print(">:/")
+#                 elif IWANTMOOORE == "ei":
+#                     break
+        
+#             elif question_func==6:
+#                 worduser=input("Sisesta sinu sõna: ")
+#                 print(worduser)
+#                 worduser_list = list(worduser)
+#                 putwhateveryouwantidc=input("Sisesta sinu fillchar: ")
+#                 worduser_list.rjust(100, fillchar=putwhateveryouwantidc)
+#                 print(worduser_list)
+#                 IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
+#                 if IWANTMOOORE == "ja":
+#                     print("1. title")
+#                     print("2. capitalize")
+#                     print("3. isnumeric")
+#                     print("4. len")
+#                     print("5. swapcase")
+#                     print("6. rjust")
+#                     print("7. ljust")
+#                     print("8. center")
+#                     print("9. zfill")
+#                     print("10. isspace")
+#                     print()
+#                     try:
+#                         question_func=int(input("Sisesta milline funktion te tahate?: "))
+#                         if question_func > 10 & question_func <= 0:
+#                             print("Vale! Provi uuesti")
+#                         else:
+#                             print("Väga hea!")
+#                     except:
+#                         print(">:/")
+#                 elif IWANTMOOORE == "ei":
+#                     break
+
+#             elif question_func==7:
+#                 worduser=input("Sisesta sinu sõna: ")
+#                 print(worduser)
+#                 worduser_list = list(worduser)
+#                 putwhateveryouwantidc=input("Sisesta sinu fillchar: ")
+#                 worduser_list.ljust(100, fillchar=putwhateveryouwantidc)
+#                 print(worduser_list)
+#                 IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
+#                 if IWANTMOOORE == "ja":
+#                     print("1. title")
+#                     print("2. capitalize")
+#                     print("3. isnumeric")
+#                     print("4. len")
+#                     print("5. swapcase")
+#                     print("6. rjust")
+#                     print("7. ljust")
+#                     print("8. center")
+#                     print("9. zfill")
+#                     print("10. isspace")
+#                     print()
+#                     try:
+#                         question_func=int(input("Sisesta milline funktion te tahate?: "))
+#                         if question_func > 10 & question_func <= 0:
+#                             print("Vale! Provi uuesti")
+#                         else:
+#                             print("Väga hea!")
+#                     except:
+#                         print(">:/")
+#                 elif IWANTMOOORE == "ei":
+#                     break
+#                 elif IWANTMOOORE == "ei":
+#                     break
+
+#             elif question_func==8:
+#                 worduser=input("Sisesta sinu sõna: ")
+#                 print(worduser)
+#                 worduser_list = list(worduser)
+#                 putwhatevernumberyouwantidc=input(int("Sisesta sinu fillchar: "))
+#                 worduser_list.center(putwhatevernumberyouwantidc)
+#                 print(worduser_list)
+#                 IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
+#                 if IWANTMOOORE == "ja":
+#                     print("1. title")
+#                     print("2. capitalize")
+#                     print("3. isnumeric")
+#                     print("4. len")
+#                     print("5. swapcase")
+#                     print("6. rjust")
+#                     print("7. ljust")
+#                     print("8. center")
+#                     print("9. zfill")
+#                     print("10. isspace")
+#                     print()
+#                     try:
+#                         question_func=int(input("Sisesta milline funktion te tahate?: "))
+#                         if question_func > 10 & question_func <= 0:
+#                             print("Vale! Provi uuesti")
+#                         else:
+#                             print("Väga hea!")
+#                     except:
+#                         print(">:/")
+#                 elif IWANTMOOORE == "ei":
+#                     break
+
+#             elif question_func==9:
+#                 worduser=input("Sisesta sinu sõna: ")
+#                 print(worduser)
+#                 worduser_list = list(worduser)
+#                 putwhatevernumberyouwantidc=input(int("Sisesta sinu fillchar: "))
+#                 worduser_list.zfill(putwhatevernumberyouwantidc)
+#                 print(worduser_list)
+#                 IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
+#                 if IWANTMOOORE == "ja":
+#                     print("1. title")
+#                     print("2. capitalize")
+#                     print("3. isnumeric")
+#                     print("4. len")
+#                     print("5. swapcase")
+#                     print("6. rjust")
+#                     print("7. ljust")
+#                     print("8. center")
+#                     print("9. zfill")
+#                     print("10. isspace")
+#                     print()
+#                     question_func=int(input("Sisesta milline funktion te tahate?: "))
+#                     if question_func > 10 & question_func <= 0:
+#                         print("Vale! Provi uuesti")
+#                 elif IWANTMOOORE == "ei":
+#                     break
+
+#             elif question_func==10:
+#                 worduser=input("Sisesta sinu sõna (Proovi ja sisesta tühidega ja tühideta): ")
+#                 print(worduser)
+#                 if worduser_list.isspace():
+#                     print("YAY!")
+#                 else:
+#                     print("See on kõik, MA plahvatan!")
+#                 print(worduser_list)
+#                 IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
+#                 if IWANTMOOORE == "ja":
+#                     print("1. title")
+#                     print("2. capitalize")
+#                     print("3. isnumeric")
+#                     print("4. len")
+#                     print("5. swapcase")
+#                     print("6. rjust")
+#                     print("7. ljust")
+#                     print("8. center")
+#                     print("9. zfill")
+#                     print("10. isspace")
+#                     print()
+#                     try:
+#                         question_func=int(input("Sisesta milline funktion te tahate?: "))
+#                         if question_func > 10 & question_func <= 0:
+#                             print("Vale! Provi uuesti")
+#                         else:
+#                             print("Väga hea!")
+#                     except:
+#                         print(">:/")
+#                 elif IWANTMOOORE == "ei":
+#                     break
+
 
 while True:
-            if question_func==1:
-                worduser=input("Sisesta sinu sõna: ")
-                print(worduser)
-                worduser_list = list(worduser)
-                worduser_list.title()
-                print(worduser_list)
-                IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
-                if IWANTMOOORE == "ja":
-                    print("1. title")
-                    print("2. capitalize")
-                    print("3. isnumeric")
-                    print("4. len")
-                    print("5. swapcase")
-                    print("6. rjust")
-                    print("7. ljust")
-                    print("8. center")
-                    print("9. zfill")
-                    print("10. isspace")
-                    print()
-                    try:
-                        question_func=int(input("Sisesta milline funktion te tahate?: "))
-                        if question_func > 10 & question_func <= 0:
-                            print("Vale! Provi uuesti")
-                        else:
-                            print("Väga hea!")
-                    except:
-                        print(">:/")
-                elif IWANTMOOORE == "ei":
-                    break
+    print("1. title")
+    print("2. capitalize")
+    print("3. isnumeric")
+    print("4. len")
+    print("5. swapcase")
+    print("6. rjust")
+    print("7. ljust")
+    print("8. center")
+    print("9. zfill")
+    print("10. isspace")
+    print()
 
-            elif question_func==2:
-                worduser=input("Sisesta sinu sõna: ")
-                print(worduser)
-                worduser_list = list(worduser)
-                worduser_list.capitalize()
-                print(worduser_list)
-                IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
-                if IWANTMOOORE == "ja":
-                    print("1. title")
-                    print("2. capitalize")
-                    print("3. isnumeric")
-                    print("4. len")
-                    print("5. swapcase")
-                    print("6. rjust")
-                    print("7. ljust")
-                    print("8. center")
-                    print("9. zfill")
-                    print("10. isspace")
-                    print()
-                    try:
-                        question_func=int(input("Sisesta milline funktion te tahate?: "))
-                        if question_func > 10 & question_func <= 0:
-                            print("Vale! Provi uuesti")
-                        else:
-                            print("Väga hea!")
-                    except:
-                        print(">:/")
-                elif IWANTMOOORE == "ei":
-                    break
+    try:
+        question_func = int(input("Sisesta milline funktion te tahate?: "))
+        if question_func <= 0 or question_func > 10:
+            print("Vale! Provi uuesti")
+        else:
+            print("Väga hea!")
+    except:
+        print(">:/")
+        continue
 
-            elif question_func==3:
-                worduser=input("Sisesta sinu sõna (proovi kirjutamine numberidega ja numprideta): ")
-                print(worduser)
-                worduser_list = list(worduser)
-                if worduser_list.isnumeric():
-                    print("YAY!")
-                else:
-                    print("See on kõik, MA plahvatan!")
-                print(worduser_list)
-                IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
-                if IWANTMOOORE == "ja":
-                    print("1. title")
-                    print("2. capitalize")
-                    print("3. isnumeric")
-                    print("4. len")
-                    print("5. swapcase")
-                    print("6. rjust")
-                    print("7. ljust")
-                    print("8. center")
-                    print("9. zfill")
-                    print("10. isspace")
-                    print()
-                    try:
-                        question_func=int(input("Sisesta milline funktion te tahate?: "))
-                        if question_func > 10 & question_func <= 0:
-                            print("Vale! Provi uuesti")
-                        else:
-                            print("Väga hea!")
-                    except:
-                        print(">:/")
-                elif IWANTMOOORE == "ei":
-                    break
+    try:
+        worduser = input("Sisesta sinu sõna: ")
+        if question_func == 1:
+            print(worduser.title())
+        elif question_func == 2:
+            print(worduser.capitalize())
+        elif question_func == 3:
+            if worduser.isnumeric():
+                print("YAY!")
+            else:
+                print("See on kõik, MA plahvatan!")
+        elif question_func == 4:
+            print(len(worduser))
+        elif question_func == 5:
+            print(worduser.swapcase())
+        elif question_func == 6:
+            fillchar = input("Sisesta sinu fillchar: ")
+            print(worduser.rjust(100, fillchar))
+        elif question_func == 7:
+            fillchar = input("Sisesta sinu fillchar: ")
+            print(worduser.ljust(100, fillchar))
+        elif question_func == 8:
+            width = int(input("Sisesta laius: "))
+            print(worduser.center(width))
+        elif question_func == 9:
+            width = int(input("Sisesta laius: "))
+            print(worduser.zfill(width))
+        elif question_func == 10:
+            if worduser.isspace():
+                print("YAY!")
+            else:
+                print("See on kõik, MA plahvatan!")
 
-            elif question_func==4:
-                worduser=input("Sisesta sinu sõna: ")
-                print(worduser)
-                worduser_list = list(worduser)
-                len(worduser_list)
-                print(worduser_list)
-                IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
-                if IWANTMOOORE == "ja":
-                    print("1. title")
-                    print("2. capitalize")
-                    print("3. isnumeric")
-                    print("4. len")
-                    print("5. swapcase")
-                    print("6. rjust")
-                    print("7. ljust")
-                    print("8. center")
-                    print("9. zfill")
-                    print("10. isspace")
-                    print()
-                    try:
-                        question_func=int(input("Sisesta milline funktion te tahate?: "))
-                        if question_func > 10 & question_func <= 0:
-                            print("Vale! Provi uuesti")
-                        else:
-                            print("Väga hea!")
-                    except:
-                        print(">:/")
-                elif IWANTMOOORE == "ei":
-                    break
-
-            elif question_func==5:
-                worduser=input("Sisesta sinu sõna: ")
-                print(worduser)
-                worduser_list = list(worduser)
-                worduser_list.swapcase()
-                print(worduser_list)
-                IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
-                if IWANTMOOORE == "ja":
-                    print("1. title")
-                    print("2. capitalize")
-                    print("3. isnumeric")
-                    print("4. len")
-                    print("5. swapcase")
-                    print("6. rjust")
-                    print("7. ljust")
-                    print("8. center")
-                    print("9. zfill")
-                    print("10. isspace")
-                    print()
-                    try:
-                        question_func=int(input("Sisesta milline funktion te tahate?: "))
-                        if question_func > 10 & question_func <= 0:
-                            print("Vale! Provi uuesti")
-                        else:
-                            print("Väga hea!")
-                    except:
-                        print(">:/")
-                elif IWANTMOOORE == "ei":
-                    break
-        
-            elif question_func==6:
-                worduser=input("Sisesta sinu sõna: ")
-                print(worduser)
-                worduser_list = list(worduser)
-                putwhateveryouwantidc=input("Sisesta sinu fillchar: ")
-                worduser_list.rjust(100, fillchar=putwhateveryouwantidc)
-                print(worduser_list)
-                IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
-                if IWANTMOOORE == "ja":
-                    print("1. title")
-                    print("2. capitalize")
-                    print("3. isnumeric")
-                    print("4. len")
-                    print("5. swapcase")
-                    print("6. rjust")
-                    print("7. ljust")
-                    print("8. center")
-                    print("9. zfill")
-                    print("10. isspace")
-                    print()
-                    try:
-                        question_func=int(input("Sisesta milline funktion te tahate?: "))
-                        if question_func > 10 & question_func <= 0:
-                            print("Vale! Provi uuesti")
-                        else:
-                            print("Väga hea!")
-                    except:
-                        print(">:/")
-                elif IWANTMOOORE == "ei":
-                    break
-
-            elif question_func==7:
-                worduser=input("Sisesta sinu sõna: ")
-                print(worduser)
-                worduser_list = list(worduser)
-                putwhateveryouwantidc=input("Sisesta sinu fillchar: ")
-                worduser_list.ljust(100, fillchar=putwhateveryouwantidc)
-                print(worduser_list)
-                IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
-                if IWANTMOOORE == "ja":
-                    print("1. title")
-                    print("2. capitalize")
-                    print("3. isnumeric")
-                    print("4. len")
-                    print("5. swapcase")
-                    print("6. rjust")
-                    print("7. ljust")
-                    print("8. center")
-                    print("9. zfill")
-                    print("10. isspace")
-                    print()
-                    try:
-                        question_func=int(input("Sisesta milline funktion te tahate?: "))
-                        if question_func > 10 & question_func <= 0:
-                            print("Vale! Provi uuesti")
-                        else:
-                            print("Väga hea!")
-                    except:
-                        print(">:/")
-                elif IWANTMOOORE == "ei":
-                    break
-                elif IWANTMOOORE == "ei":
-                    break
-
-            elif question_func==8:
-                worduser=input("Sisesta sinu sõna: ")
-                print(worduser)
-                worduser_list = list(worduser)
-                putwhatevernumberyouwantidc=input(int("Sisesta sinu fillchar: "))
-                worduser_list.center(putwhatevernumberyouwantidc)
-                print(worduser_list)
-                IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
-                if IWANTMOOORE == "ja":
-                    print("1. title")
-                    print("2. capitalize")
-                    print("3. isnumeric")
-                    print("4. len")
-                    print("5. swapcase")
-                    print("6. rjust")
-                    print("7. ljust")
-                    print("8. center")
-                    print("9. zfill")
-                    print("10. isspace")
-                    print()
-                    try:
-                        question_func=int(input("Sisesta milline funktion te tahate?: "))
-                        if question_func > 10 & question_func <= 0:
-                            print("Vale! Provi uuesti")
-                        else:
-                            print("Väga hea!")
-                    except:
-                        print(">:/")
-                elif IWANTMOOORE == "ei":
-                    break
-
-            elif question_func==9:
-                worduser=input("Sisesta sinu sõna: ")
-                print(worduser)
-                worduser_list = list(worduser)
-                putwhatevernumberyouwantidc=input(int("Sisesta sinu fillchar: "))
-                worduser_list.zfill(putwhatevernumberyouwantidc)
-                print(worduser_list)
-                IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
-                if IWANTMOOORE == "ja":
-                    print("1. title")
-                    print("2. capitalize")
-                    print("3. isnumeric")
-                    print("4. len")
-                    print("5. swapcase")
-                    print("6. rjust")
-                    print("7. ljust")
-                    print("8. center")
-                    print("9. zfill")
-                    print("10. isspace")
-                    print()
-                    question_func=int(input("Sisesta milline funktion te tahate?: "))
-                    if question_func > 10 & question_func <= 0:
-                        print("Vale! Provi uuesti")
-                elif IWANTMOOORE == "ei":
-                    break
-
-            elif question_func==10:
-                worduser=input("Sisesta sinu sõna (Proovi ja sisesta tühidega ja tühideta): ")
-                print(worduser)
-                if worduser_list.isspace():
-                    print("YAY!")
-                else:
-                    print("See on kõik, MA plahvatan!")
-                print(worduser_list)
-                IWANTMOOORE=input("Kas te tahate parem?: (ja või ei)")
-                if IWANTMOOORE == "ja":
-                    print("1. title")
-                    print("2. capitalize")
-                    print("3. isnumeric")
-                    print("4. len")
-                    print("5. swapcase")
-                    print("6. rjust")
-                    print("7. ljust")
-                    print("8. center")
-                    print("9. zfill")
-                    print("10. isspace")
-                    print()
-                    try:
-                        question_func=int(input("Sisesta milline funktion te tahate?: "))
-                        if question_func > 10 & question_func <= 0:
-                            print("Vale! Provi uuesti")
-                        else:
-                            print("Väga hea!")
-                    except:
-                        print(">:/")
-                elif IWANTMOOORE == "ei":
-                    break
-
+        IWANTMOOORE = input("Kas te tahate parem?: (ja või ei) ")
+        if IWANTMOOORE == "ja":
+            continue
+        elif IWANTMOOORE == "ei":
+            break
+    except:
+        print("Vale! Provi uuesti")
