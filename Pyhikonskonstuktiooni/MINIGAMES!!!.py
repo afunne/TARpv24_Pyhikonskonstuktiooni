@@ -85,7 +85,7 @@ while True:
         time.sleep(3)
         itemlist = ["kivi", "käädrid", "paber"]
 
-        if LETSGOGAMBALING not in itemlist:
+        if LETSGOGAMBALING or LETSGOGAMBALING2 not in itemlist:
                 print("Nuh uh, proovi uueesti!")
                 LETSGOGAMBALING=input("Kasutan... : ")
                 LETSGOGAMBALING2=input("Kasutan... : ")
