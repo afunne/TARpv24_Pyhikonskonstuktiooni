@@ -1,6 +1,13 @@
 import random
 import time
 
+scoreforplayer = 0
+scoreforrobot = 0
+scoreformario = 0
+scoreforluigi = 0
+# scoreforluigi += 1
+
+
 #at home I will finish this
 print("Tere tulemast! See mäng on... kivi, käärid, paber. Te teate mida te peate tegema.")
 print()
@@ -31,48 +38,61 @@ while True:
             if DoYouWantToCont==1:
                 continue
             elif DoYouWantToCont==0:
+                print(f"Sinu punkt: {scoreforplayer} /n Roboti punkt: {scoreforrobot}")
                 break
         elif LETSGOGAMBALING == "kivi" and cmonworkpls == "paper":
             print("Robot võidab!")
+            scoreforrobot += 1
             DoYouWantToCont= int(input("Kas te tahate mängida paljum? [1-ja, 0-ei]: "))
             if DoYouWantToCont==1:
                 continue
             elif DoYouWantToCont==0:
+                print(f"Sinu punkt: {scoreforplayer} /n Roboti punkt: {scoreforrobot}")
                 break
         elif LETSGOGAMBALING == "kivi" and cmonworkpls == "käädrid":
             print("Sa võidsid!")
+            scoreforplayer += 1
             DoYouWantToCont= int(input("Kas te tahate mängida paljum? [1-ja, 0-ei]: "))
             if DoYouWantToCont==1:
                 continue
             elif DoYouWantToCont==0:
+                print(f"Sinu punkt: {scoreforplayer} /n Roboti punkt: {scoreforrobot}")
                 break
         elif LETSGOGAMBALING == "käädrid" and cmonworkpls == "kivi":
             print("Robot võidab!")
+            scoreforrobot += 1
             DoYouWantToCont= int(input("Kas te tahate mängida paljum? [1-ja, 0-ei]: "))
             if DoYouWantToCont==1:
                 continue
             elif DoYouWantToCont==0:
+                print(f"Sinu punkt: {scoreforplayer} /n Roboti punkt: {scoreforrobot}")
                 break
         elif LETSGOGAMBALING == "käädrid" and cmonworkpls == "paber":
             print("Sa võidsid!")
+            scoreforplayer += 1
             DoYouWantToCont= int(input("Kas te tahate mängida paljum? [1-ja, 0-ei]: "))
             if DoYouWantToCont==1:
                 continue
             elif DoYouWantToCont==0:
+                print(f"Sinu punkt: {scoreforplayer} /n Roboti punkt: {scoreforrobot}")
                 break
         elif LETSGOGAMBALING == "paber" and cmonworkpls == "kivi":
             print("Sa võidsid!")
+            scoreforplayer += 1
             DoYouWantToCont= int(input("Kas te tahate mängida paljum? [1-ja, 0-ei]: "))
             if DoYouWantToCont==1:
                 continue
             elif DoYouWantToCont==0:
+                print(f"Sinu punkt: {scoreforplayer} /n Roboti punkt: {scoreforrobot}")
                 break
         elif LETSGOGAMBALING == "paber" and cmonworkpls == "käädrid":
             print("Robot võidab!")
+            scoreforrobot += 1
             DoYouWantToCont= int(input("Kas te tahate mängida paljum? [1-ja, 0-ei]: "))
             if DoYouWantToCont==1:
                 continue
             elif DoYouWantToCont==0:
+                print(f"Sinu punkt: {scoreforplayer} /n Roboti punkt: {scoreforrobot}")
                 break
 
 
@@ -104,46 +124,59 @@ while True:
             if DoYouWantToCont==1:
                 continue
             elif DoYouWantToCont==0:
+                print(f"Sinu punkt: {scoreformario} /n Luigi punkt: {scoreforluigi}")
                 break
         elif LETSGOGAMBALING == "kivi" and LETSGOGAMBALING2 == "paper":
-            print("Robot võidab!")
+            print("Luigi võidab!")
+            scoreforluigi += 1
             DoYouWantToCont= int(input("Kas te tahate mängida paljum? [1-ja, 0-ei]: "))
             if DoYouWantToCont==1:
                 continue
             elif DoYouWantToCont==0:
+                print(f"Sinu punkt: {scoreformario} /n Luigi punkt: {scoreforluigi}")
                 break
         elif LETSGOGAMBALING == "kivi" and LETSGOGAMBALING2 == "käädrid":
-            print("Sa võidsid!")
+            print("Mario võidab!")
+            scoreformario += 1
             DoYouWantToCont= int(input("Kas te tahate mängida paljum? [1-ja, 0-ei]: "))
             if DoYouWantToCont==1:
                 continue
             elif DoYouWantToCont==0:
+                print(f"Sinu punkt: {scoreformario} /n Luigi punkt: {scoreforluigi}")
                 break
         elif LETSGOGAMBALING == "käädrid" and LETSGOGAMBALING2 == "kivi":
-            print("Robot võidab!")
+            print("Luigi võidab!")
+            scoreforluigi += 1
             DoYouWantToCont= int(input("Kas te tahate mängida paljum? [1-ja, 0-ei]: "))
             if DoYouWantToCont==1:
                 continue
             elif DoYouWantToCont==0:
+                print(f"Sinu punkt: {scoreformario} /n Luigi punkt: {scoreforluigi}")
                 break
         elif LETSGOGAMBALING == "käädrid" and LETSGOGAMBALING2 == "paber":
-            print("Sa võidsid!")
+            print("Mario võidab!")
+            scoreformario += 1
             DoYouWantToCont= int(input("Kas te tahate mängida paljum? [1-ja, 0-ei]: "))
             if DoYouWantToCont==1:
                 continue
             elif DoYouWantToCont==0:
+                print(f"Sinu punkt: {scoreformario} /n Luigi punkt: {scoreforluigi}")
                 break
         elif LETSGOGAMBALING == "paber" and LETSGOGAMBALING2 == "kivi":
-            print("Sa võidsid!")
+            print("Mario võidab!")
+            scoreformario += 1
             DoYouWantToCont= int(input("Kas te tahate mängida paljum? [1-ja, 0-ei]: "))
             if DoYouWantToCont==1:
                 continue
             elif DoYouWantToCont==0:
+                print(f"Sinu punkt: {scoreformario} /n Luigi punkt: {scoreforluigi}")
                 break
         elif LETSGOGAMBALING == "paber" and LETSGOGAMBALING2 == "käädrid":
-            print("Robot võidab!")
+            print("Luigi võidab!")
+            scoreforluigi += 1
             DoYouWantToCont= int(input("Kas te tahate mängida paljum? [1-ja, 0-ei]: "))
             if DoYouWantToCont==1:
                 continue
             elif DoYouWantToCont==0:
+                print(f"Sinu punkt: {scoreformario} /n Luigi punkt: {scoreforluigi}")
                 break
