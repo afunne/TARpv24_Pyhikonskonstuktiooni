@@ -75,7 +75,10 @@ while True:
             elif DoYouWantToCont==0:
                 break
 
-            # Mäng mängijaga
+
+
+
+# Mäng mängijaga
     if tase == 1:
         print("Mängija, kas te kasutate kivi, käädrid või paber?")
         LETSGOGAMBALING=input("Kasutan... : ")
