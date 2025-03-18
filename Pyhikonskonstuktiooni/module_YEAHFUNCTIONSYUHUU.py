@@ -39,3 +39,9 @@ def square_list(külg:float)->list:
     d=(2)**(1/2)*külg
     s_list=[S,P,d]
     return s_list
+
+def season(kuu:int)->any:
+    """Panna midage te tahate siis, ma pole märatsa
+    I gotta finish it at home nvm tbh
+    """
+    if kuu =
