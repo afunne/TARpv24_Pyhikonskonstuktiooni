@@ -22,7 +22,7 @@ while True:
     except:
         print(":|")
         
-
+# my wordle
 if tase==1:
     while True:
         number1 = input("Proovi, panna midagi (mitte sõna): ").lower()
@@ -70,8 +70,9 @@ if tase==1:
             break
 
     print(":3, siis... *viskab sulle joogi peale*")
-    print("and ja, see sõne oli viski")
+    print("and ja, see sõna oli viski")
 
+# their wordle idk how to call this
 if tase == 2:
     gogomylist = ["viski", "leib", "riigikogu", "ligma", "coolkid"]
     randomgogolist = choice(gogomylist)
