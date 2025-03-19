@@ -40,8 +40,58 @@ def square_list(külg:float)->list:
     s_list=[S,P,d]
     return s_list
 
-def season(kuu:int)->any:
+def season(kuu:int)->str:
     """Panna midage te tahate siis, ma pole märatsa
     I gotta finish it at home nvm tbh
     """
-    if kuu =
+    if kuu in [12,1,2]:
+        return "talv"
+    elif kuu in [3,4,5]:
+        return "Kevadine"
+    elif kuu in [6,7,8]:
+        return "Suvi"
+    elif kuu in [9,10,11]:
+        return "sügis"
+    else:
+        return kuu
+
+# (4) 2
+def season(kuu:int)->str:
+    """Panna midage te tahate siis, ma pole märatsa
+    I gotta finish it at home nvm tbh
+    """
+    while True:
+        if kuu in range(1, 13):
+            break
+        else:
+            kuu = season(int(input("Panna number ya näita mis astaaeg see on: ")))
+    return season(kuu)
+
+# 5
+def bank(aeur:float, years:int)->float:
+    for i in range(years):
+        aeur = aeur * 1.10
+        return round (aeur, 2)
+
+# def is_prime(arg:float)->bool:
+#     areyouprime=arg/arg
+#     areyouprimeas=arg%1
+#     if areyouprime == 1 and areyouprimeas==0:
+#         v="True"
+#     else:
+#         v="False"
+#         return v
+
+
+def is_prime(arg:int)->bool:
+    if 0 <= arg < 1001:
+        for i in range(2,arg):
+            if arg % i == 0:
+                return False
+            else:
+                return True
+    else:
+        if arg in [0,1]:
+            pass
+
+# 7
