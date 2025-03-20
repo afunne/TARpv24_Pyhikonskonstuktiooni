@@ -21,11 +21,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="MODULEfunctionspracticetasklol.py" />
     <Compile Include="module1.py" />
     <Compile Include="module10.py" />
     <Compile Include="module11.py" />
     <Compile Include="listStudyLetsgo!!!.py" />
     <Compile Include="MINIGAMES!!!.py" />
+    <Compile Include="functionspracticetasklol.py" />
     <Compile Include="WORLDEMINIGAMESV2.py" />
     <Compile Include="module2.py" />
     <Compile Include="module3.py" />
