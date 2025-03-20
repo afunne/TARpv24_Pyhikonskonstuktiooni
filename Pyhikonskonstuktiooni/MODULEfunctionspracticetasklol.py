@@ -27,9 +27,8 @@ def registreerimine(username:str,paroolXD:str,tehe:int)->any:
             continue
         regex = re.compile('[@_!#$%^&*()<>?/\|}{~:]')  
         if(regex.search(registreerimine) == None):
-            print("Yuh uh")
+            break
         else:
             print("Nuh uh")
             continue
-
     return username, paroolXD, tehe
