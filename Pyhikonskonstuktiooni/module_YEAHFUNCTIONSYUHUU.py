@@ -99,6 +99,10 @@ def is_prime(arg:int)->bool:
 
 # 7 TS helped me a little bit here
 def is_valid_date(day, month, year):
+    """
+    see oli lõbus programmeerimine, kuid valus.
+    See lihtsalt kontrollib teie eest, kas kuupäev on olemas või mitte.
+    """
     try:
         datetime(year=year, month=month, day=day)
         return True
@@ -110,6 +114,9 @@ def is_valid_date(day, month, year):
 # okay look ik I am maybe little lazy on this one but where the hell do you think I would get an exsample of this?
 # okay after 50 tries it works
 def XOR_cipher(text, key):
+    """
+    Tutvustan teile küberturvalisuse põhitõdesid!
+    """
     encrypted_text = ""
     for char in text:
         encrypted_text += chr(ord(char) ^ key) # this part was suggested by TS
