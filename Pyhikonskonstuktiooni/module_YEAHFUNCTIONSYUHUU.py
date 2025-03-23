@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 def arithmetic(arv1:float,arv2:float,tehe:str)->any:
     """Lihtne kalkulaator
     + - liitmine
@@ -82,7 +85,7 @@ def bank(aeur:float, years:int)->float:
 #         v="False"
 #         return v
 
-
+# 6
 def is_prime(arg:int)->bool:
     if 0 <= arg < 1001:
         for i in range(2,arg):
@@ -94,4 +97,25 @@ def is_prime(arg:int)->bool:
         if arg in [0,1]:
             pass
 
-# 7
+# 7 TS helped me a little bit here
+def is_valid_date(day, month, year):
+    try:
+        datetime(year=year, month=month, day=day)
+        return True
+    except:
+        return False
+
+# 8 
+# https://stackoverflow.com/questions/20557999/xor-python-text-encryption-decryption
+# okay look ik I am maybe little lazy on this one but where the hell do you think I would get an exsample of this?
+# okay after 50 tries it works
+def XOR_cipher(text, key):
+    encrypted_text = ""
+    for char in text:
+        encrypted_text += chr(ord(char) ^ key) # this part was suggested by TS
+    return encrypted_text
+
+def XOR_uncipher(encrypted_text, key):
+    return XOR_cipher(encrypted_text, key)
+
+

@@ -1,5 +1,7 @@
 from telnetlib import EC
 from module_YEAHFUNCTIONSYUHUU import *
+from datetime import datetime
+
 a=float(input("Sisesta arv 1: "))
 b=float(input("Sisesta arv 2: "))
 t=input("Tehe: ")
@@ -37,4 +39,18 @@ while True:
 arg=int(input("Sisesta summa: "))
 vastus=is_prime(arg)
 print(vastus)
+
+# 7
+print(is_valid_date(31, 12, 2025))
+print(is_valid_date(31, 2, 2025))
+
+# 8 I wanna kms
+text = input("Sisesta midagi: ")
+key = 42
+
+encrypted = XOR_cipher(text, key)
+print("Krüptograafiline tekst:", encrypted)
+
+decrypted = XOR_uncipher(encrypted, key)
+print("Dekrüpteeritud tekst:", decrypted)
 
