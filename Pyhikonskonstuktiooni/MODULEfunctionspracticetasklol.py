@@ -248,3 +248,4 @@ def unu_par_tast(usersstore: dict) -> dict:
 # 5
 def lõpetamine():
   print("lõpetamine")
+
