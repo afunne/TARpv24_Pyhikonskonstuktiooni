@@ -128,8 +128,6 @@ def registreerimine() -> tuple:
 def autoriseerimine(users_db: dict) -> bool:
         """
         Kontrollib, kas kasutaja sisestas õige kasutajanime ja parooli.
-        :param users_db: Sõnastik registreeritud kasutajatega (kasutajanimi: parool)
-        :return: True, kui autentimine õnnestus; False, kui ei õnnestunud
         """
         username = input("Sisesta kasutajanimi: ")
         password = input("Sisesta parool: ")
