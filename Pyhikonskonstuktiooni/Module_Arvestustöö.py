@@ -1,4 +1,5 @@
 import sys
+import numpy as np
 
 def Linnad() -> tuple:
     """
@@ -37,8 +38,47 @@ def Linnad() -> tuple:
     # if min_population>population:
     #     min_population = population
     #     min_city = city
-    print(f"Max elanikkond: {str(max(population))}") # .format(max_population, max_city))
-    print(f"Min elanikkond: {str(min(population))}") # .format(min_population, min_city))
+    # city_pop = city.index == population.index
+    common = np.intersect1d(city, max(population))
+    print(common)
 
-    questionfor1mil= input("Kirjuta linna nimi, mille te tahate kutsuta: ")
+    common2 = np.intersect1d(city, min(population))
+    print(common2)
 
+    
+    # for i in city:
+    #     print(f"{city.index(i)+1}: {i}")
+
+    #     choice = input("Which game you wanna play with me??")
+
+    # print(List_Of_Games[choice])
+
+
+    print(f"Max elanikkond: {tuple(common)}") # .format(max_population, max_city))
+    print(f"Min elanikkond: {tuple(common2)}") # .format(min_population, min_city))
+
+
+    # questionfor1mil= input("Kirjuta linna nimi, mille te tahate kutsuta: ")
+    # print(name in questionfor1mil)
+    # if True:
+    #     print(questionfor1mil, population[questionfor1mil])
+    # elif False:
+    #     print("Huh")
+
+
+    common = np.intersect1d(city, max(population))
+    print(common)
+
+    common2 = np.intersect1d(city, min(population))
+    print(common2)
+
+    # for i in city:
+    #     print(f"{city.index(i)+1}: {i}")
+    #     print(f"{population.index(i)+1}: {i}")
+    #     choice = input("Kirjuta linna nimi, mille te tahate kutsuta: ")
+    # print(city[choice], population[choice])
+
+    for i in city:
+        print(f"{city.index(i)+1}: {i}")
+        choice = input("Kirjuta linna nimi, mille te tahate kutsuta: ")
+    print(city[choice], population(index = choice))
