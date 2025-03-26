@@ -6,27 +6,34 @@ print(f"Kasutajanimi: {username}, Parool: {password}")
 
 # 2
 # https://www.w3schools.com/python/python_dictionaries.asp
-usersstore = {username: password}
+# usersstore = {username: password}
 
-print("\n Tere Tulemast! Loggi sisse")
-checking = autoriseerimine(usersstore)
+# print("\n Tere Tulemast! Loggi sisse")
+# checking = autoriseerimine(usersstore)
 
-if checking:
-    print("Tere tulemast!")
-else:
-    print("Proovi uuesti.")
+# if checking:
+#     print("Tere tulemast!")
+# else:
+#     print("Proovi uuesti.")
+
+user = [(username, password)]
+autoriseerimine(user)
 
 # 3
 # old info
-usersstore = {username: password}
-usersstore = muuda_kasutajat(usersstore)
+user = [(username, password)]
+user = muuda_kasutajat(user)
+print(user) 
 
-print("Uuendatud kasutajad:", usersstore)
+print("Uuendatud kasutajad:", user)
 
 # 4
-usersstore = {username: password}
-usersstore = unu_par_tast(usersstore)
-print("Uus kasutaja:", usersstore)
+# usersstore = {username: password}
+# usersstore = unu_par_tast(usersstore)
+# print("Uus kasutaja:", usersstore)
+user = [(username, password)]
+user = unu_par_tast(user)
+print(user)
 
 # 5
 lõpetamine()
