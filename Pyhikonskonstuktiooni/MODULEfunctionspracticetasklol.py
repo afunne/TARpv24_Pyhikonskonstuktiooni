@@ -241,7 +241,7 @@ def muuda_kasutajat(users_list: list) -> list:
         print("0. Ei taha")
         valik = int(input("Sisesta valik: "))
     
-        if valik == 0:
+        if valik == 1:
             uus_nimi = input("Sisesta uus kasutajanimi: ")
             if uus_nimi in users_list:
                 print("See kasutajanimi on juba kasutusel!")
