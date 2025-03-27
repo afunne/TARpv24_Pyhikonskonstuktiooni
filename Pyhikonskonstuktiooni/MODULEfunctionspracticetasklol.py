@@ -2,6 +2,7 @@ import re
 from random import *
 import secrets
 import string
+import os
 
 # def registreerimine(username:str,paroolXD:str,tehe:int)->any:
 #     """
@@ -129,15 +130,19 @@ def registreerimine() -> tuple:
             # if you are asking me why I didnt use the code on the example, its because it didn't work
             # Yeah I took it from a forum and changed into my taste >:D
             # https://www.codingal.com/coding-for-kids/blog/create-random-password-generator-program-using-python/
-            letters = string.ascii_letters
-            digits = string.digits
-            special_chars = string.punctuation
-            selection_list = letters + digits + special_chars
-            password = ''
-            password += ''.join(secrets.choice(selection_list))
-            print(password)
-
-    return tehe, username, password
+           letters = string.ascii_letters
+           digits = string.digits
+           special_chars = string.punctuation
+           selection_list = letters + digits + special_chars
+           password_len = 10
+           password = ''
+           for i in range(password_len):
+               password+= ''.join(secrets.choice(selection_list))
+               print(password)
+               clear = lambda: os.system('cls')
+               clear()
+               print(password)
+        return tehe, username, password
 
 # 2
 # def autoriseerimine(users_db: dict) -> bool:
