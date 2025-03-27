@@ -15,6 +15,7 @@ while True:
         choice = int(input("valida number: "))
     except:
         print("nuh uh")
+        continue
 
 
     # it is just faster that way
