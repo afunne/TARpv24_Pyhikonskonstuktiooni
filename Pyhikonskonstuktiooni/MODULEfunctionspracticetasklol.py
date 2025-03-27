@@ -101,15 +101,30 @@ def registreerimine() -> tuple:
                 
                 # If it finds out you didn't follow anything pwend Sword Fight on the Heights IV
                 has_letter = any(password.isalpha() in password)
+                if has_letter == True:
+                    pass
+                else:
+                    print("Nuh uh")
+                    continue
                 has_digit = any(password.isdigit() in password)
+                if has_digit == True:
+                    pass
+                else:
+                    print("Nuh uh")
+                    continue
                 has_special = bool(re.search('[@_!#$%^&*()<>?/\|}{~:]', password))
+                if has_special == True:
+                    pass
+                else:
+                    print("Nuh uh")
+                    continue
                 
                 if not (has_letter and has_digit and has_special): # if not all requirements are met, you get pwend in SOHF
                     print("Parool peab sisaldama nii tähti, numbreid kui ka erimärke")
                     continue
                 else:
                     break
-            break
+
         elif tehe == 2:
             # if you are asking me why I didnt use the code on the example, its because it didn't work
             # Yeah I took it from a forum and changed into my taste >:D
