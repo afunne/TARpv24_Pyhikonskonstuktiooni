@@ -246,7 +246,7 @@ def muuda_kasutajat(users_list: list) -> list:
             if uus_nimi in users_list:
                 print("See kasutajanimi on juba kasutusel!")
             else:
-                users_list[uus_nimi] = users_list.pop(username)
+                users_list[uus_nimi] = users_list.remove(username)
                 print("Kasutajanimi muudetud edukalt!")
 
             uus_parool = input("Sisesta uus parool: ")
