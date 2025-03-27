@@ -4,200 +4,249 @@ import secrets
 import string
 import os
 
-# def registreerimine(username:str,paroolXD:str,tehe:int)->any:
-#     """
-#     See funktsion teeb või küsis kasutajanimist ja parolist
-#     """
-#     while True:
-#         if tehe in [1, 2]:
-#             pass
-#         else:
-#             print("*insert cat exploding gif*")
-#         if username is None:
-#             print("Nuh uh")
-#             continue
-#         else: pass
+# # def registreerimine(username:str,paroolXD:str,tehe:int)->any:
+# #     """
+# #     See funktsion teeb või küsis kasutajanimist ja parolist
+# #     """
+# #     while True:
+# #         if tehe in [1, 2]:
+# #             pass
+# #         else:
+# #             print("*insert cat exploding gif*")
+# #         if username is None:
+# #             print("Nuh uh")
+# #             continue
+# #         else: pass
 
-#         if username.isalpha:
-#             pass
-#         else:
-#             print("Nuh uh")
-#             continue
+# #         if username.isalpha:
+# #             pass
+# #         else:
+# #             print("Nuh uh")
+# #             continue
 
-#         if username.isdigit:
-#             pass
-#         else:
-#             print("Nuh uh")
-#             continue
-#         regex = re.compile('[@_!#$%^&*()<>?/\|}{~:]')  
-#         if(regex.search(registreerimine) == None):
-#             break
-#         else:
-#             print("Nuh uh")
-#             continue
-#     return username, paroolXD, tehe
+# #         if username.isdigit:
+# #             pass
+# #         else:
+# #             print("Nuh uh")
+# #             continue
+# #         regex = re.compile('[@_!#$%^&*()<>?/\|}{~:]')  
+# #         if(regex.search(registreerimine) == None):
+# #             break
+# #         else:
+# #             print("Nuh uh")
+# #             continue
+# #     return username, paroolXD, tehe
 
-# def registreerimine(tehe:int, username:str, password:str) ->any:
+# # def registreerimine(tehe:int, username:str, password:str) ->any:
+# #     """
+# #     See funktsion teeb või küsis kasutajanimist ja parolist
+# #     """
+# #     while True:
+# #         username = input("Sisesta sinu kasutajanimi: ")
+# #         if username == None:
+# #             print("Nuh uh")
+# #             continue
+# #         else: pass
+
+# #         tehe= int(input("Kas te tahate looda sinu parol iseseisvalt või AI-ga [1, 2]: "))
+# #         if tehe ==1:
+# #             password = input("Sisesta sinu parool: ")
+# #             if password == None:
+# #                 print("Nuh uh")
+# #                 continue
+# #             elif password.isalpha:
+# #                 pass
+# #             elif password.isdigit:
+# #                 pass
+# #             regex = re.compile('[@_!#$%^&*()<>?/\|}{~:]')
+# #             if (regex.search(password) == None):
+# #                 continue
+# #             else:
+# #                 print("Yuh uh")
+# #                 break
+# #         elif tehe==2:
+# #             i=input("Sisesta täht => ")
+# #             if(i.isupper()):
+# #                 print("See on suur täht", i)
+# #             a=input("Sisesta arv => ")
+# #             if (a.isdigit()):
+# #                 print("See on täisarv ", a)
+# #         else:
+# #             print("XD")
+# #             continue
+# #     return tehe, username, password
+
+
+# def registreerimine() -> tuple:
 #     """
-#     See funktsion teeb või küsis kasutajanimist ja parolist
+#     See funktsioon küsib kasutajalt kasutajanime ja parooli.
 #     """
 #     while True:
 #         username = input("Sisesta sinu kasutajanimi: ")
-#         if username == None:
-#             print("Nuh uh")
+#         if not username:  # == None (ik it looks retarted, but it works)
+#             print("Kasutajanimi ei saa olla tühi!")
 #             continue
-#         else: pass
 
-#         tehe= int(input("Kas te tahate looda sinu parol iseseisvalt või AI-ga [1, 2]: "))
-#         if tehe ==1:
-#             password = input("Sisesta sinu parool: ")
-#             if password == None:
-#                 print("Nuh uh")
-#                 continue
-#             elif password.isalpha:
-#                 pass
-#             elif password.isdigit:
-#                 pass
-#             regex = re.compile('[@_!#$%^&*()<>?/\|}{~:]')
-#             if (regex.search(password) == None):
-#                 continue
-#             else:
-#                 print("Yuh uh")
-#                 break
-#         elif tehe==2:
-#             i=input("Sisesta täht => ")
-#             if(i.isupper()):
-#                 print("See on suur täht", i)
-#             a=input("Sisesta arv => ")
-#             if (a.isdigit()):
-#                 print("See on täisarv ", a)
-#         else:
-#             print("XD")
+#         try:
+#             tehe = int(input("Kas te tahate luua parooli iseseisvalt või AI-ga [1, 2]: "))
+#         except:
+#             print("Palun sisesta number 1 või 2")
 #             continue
-#     return tehe, username, password
 
-
-def registreerimine() -> tuple:
-    """
-    See funktsioon küsib kasutajalt kasutajanime ja parooli.
-    """
-    while True:
-        username = input("Sisesta sinu kasutajanimi: ")
-        if not username:  # == None (ik it looks retarted, but it works)
-            print("Kasutajanimi ei saa olla tühi!")
-            continue
-
-        try:
-            tehe = int(input("Kas te tahate luua parooli iseseisvalt või AI-ga [1, 2]: "))
-        except:
-            print("Palun sisesta number 1 või 2")
-            continue
-
-        if tehe == 1:
-            while True:
-                password = input("Sisesta sinu parool: ")
-                if not password: # == None
-                    print("Parool ei saa olla tühi!")
-                    continue
+#         if tehe == 1:
+#             while True:
+#                 password = input("Sisesta sinu parool: ")
+#                 if not password: # == None
+#                     print("Parool ei saa olla tühi!")
+#                     continue
                 
-                # If it finds out you didn't follow anything pwend Sword Fight on the Heights IV
-                has_letter = any(password.isalpha() in password)
-                if has_letter == True:
-                    pass
-                else:
-                    print("Nuh uh")
-                    continue
-                has_digit = any(password.isdigit() in password)
-                if has_digit == True:
-                    pass
-                else:
-                    print("Nuh uh")
-                    continue
-                has_special = bool(re.search('[@_!#$%^&*()<>?/\|}{~:]', password))
-                if has_special == True:
-                    pass
-                else:
-                    print("Nuh uh")
-                    continue
+#                 # If it finds out you didn't follow anything pwend Sword Fight on the Heights IV
+#                 has_letter = any(password.isalpha() in password)
+#                 if has_letter == True:
+#                     pass
+#                 else:
+#                     print("Nuh uh")
+#                     continue
+#                 has_digit = any(password.isdigit() in password)
+#                 if has_digit == True:
+#                     pass
+#                 else:
+#                     print("Nuh uh")
+#                     continue
+#                 has_special = bool(re.search('[@_!#$%^&*()<>?/\|}{~:]', password))
+#                 if has_special == True:
+#                     pass
+#                 else:
+#                     print("Nuh uh")
+#                     continue
                 
-                if not (has_letter and has_digit and has_special): # if not all requirements are met, you get pwend in SOHF
-                    print("Parool peab sisaldama nii tähti, numbreid kui ka erimärke")
-                    continue
-                else:
-                    break
+#                 if not (has_letter and has_digit and has_special): # if not all requirements are met, you get pwend in SOHF
+#                     print("Parool peab sisaldama nii tähti, numbreid kui ka erimärke")
+#                     continue
+#                 else:
+#                     break
 
-        elif tehe == 2:
-            # if you are asking me why I didnt use the code on the example, its because it didn't work
-            # Yeah I took it from a forum and changed into my taste >:D
-            # https://www.codingal.com/coding-for-kids/blog/create-random-password-generator-program-using-python/
-           letters = string.ascii_letters
-           digits = string.digits
-           special_chars = string.punctuation
-           selection_list = letters + digits + special_chars
-           password_len = 10
-           password = ''
-           for i in range(password_len):
-               password+= ''.join(secrets.choice(selection_list))
-               print(password)
-               clear = lambda: os.system('cls')
-               clear()
-               print(password)
-        return tehe, username, password
+#         elif tehe == 2:
+#             # if you are asking me why I didnt use the code on the example, its because it didn't work
+#             # Yeah I took it from a forum and changed into my taste >:D
+#             # https://www.codingal.com/coding-for-kids/blog/create-random-password-generator-program-using-python/
+#            letters = string.ascii_letters
+#            digits = string.digits
+#            special_chars = string.punctuation
+#            selection_list = letters + digits + special_chars
+#            password_len = 10
+#            password = ''
+#            for i in range(password_len):
+#                password+= ''.join(secrets.choice(selection_list))
+#                print(password)
+#                clear = lambda: os.system('cls')
+#                clear()
+#                print(password)
+#         return tehe, username, password
 
-# 2
-# def autoriseerimine(users_db: dict) -> bool:
-#         """
-#         Kontrollib, kas kasutaja sisestas õige kasutajanime ja parooli.
-#         """
-#         username = input("Sisesta kasutajanimi: ")
-#         password = input("Sisesta parool: ")
+# # 2
+# # def autoriseerimine(users_db: dict) -> bool:
+# #         """
+# #         Kontrollib, kas kasutaja sisestas õige kasutajanime ja parooli.
+# #         """
+# #         username = input("Sisesta kasutajanimi: ")
+# #         password = input("Sisesta parool: ")
     
-#         if username in users_db and users_db[username] == password:
-#             print("Sisselogimine õnnestus!")
-#             return True
-#         else:
-#             print("Vale kasutajanimi või parool!")
-#             return False
+# #         if username in users_db and users_db[username] == password:
+# #             print("Sisselogimine õnnestus!")
+# #             return True
+# #         else:
+# #             print("Vale kasutajanimi või parool!")
+# #             return False
 
-def autoriseerimine(users_list: list) -> bool:
-    """
-    Kontrollib, kas kasutaja sisestas õige kasutajanime ja parooli.
-    Kasutajate andmed on listis kujul [(kasutajanimi1, parool1)...]
-    """
-    username = input("Sisesta kasutajanimi: ")
-    password = input("Sisesta parool: ")
+# def autoriseerimine(users_list: list) -> bool:
+#     """
+#     Kontrollib, kas kasutaja sisestas õige kasutajanime ja parooli.
+#     Kasutajate andmed on listis kujul [(kasutajanimi1, parool1)...]
+#     """
+#     username = input("Sisesta kasutajanimi: ")
+#     password = input("Sisesta parool: ")
     
-    if users_list[0] == username and users_list[1] == password:
-        print("Sisselogimine õnnestus!")
-        return True
+#     if users_list[0] == username and users_list[1] == password:
+#         print("Sisselogimine õnnestus!")
+#         return True
     
-    print("Vale kasutajanimi või parool!")
-    return False
+#     print("Vale kasutajanimi või parool!")
+#     return False
 
-# 3
-# def muuda_kasutajat(userstore: dict) -> dict:
+# # 3
+# # def muuda_kasutajat(userstore: dict) -> dict:
+# #     """
+# #     Lubab kasutajal muuta oma kasutajanime või parooli.
+# #     """
+# #     while True:
+# #         # Autentimine enne muutmist
+# #         print("Kas te tahate mudada midagi?: ")
+
+# #         tries=4
+
+# #         print("Nuh uh, ma pean provima!")
+# #         username = input("Kasutajanimi: ")
+# #         password = input("Parool: ")
+    
+# #         if username not in userstore or userstore[username] != password:
+# #             while username not in userstore or userstore[username] != password:
+# #                 print("Vale kasutajanimi või parool!")
+# #                 tries -= 1
+# #                 username = input("Kasutajanimi: ")
+# #                 password = input("Parool: ")
+# #                 if tries == 0:
+# #                     print("Proovide arv on otsas.")
+# #                     break
+
+# #         print("1. Muuda kasutajanimi ja parool")
+# #         print("0. Ei taha")
+# #         valik = int(input("Sisesta valik: "))
+    
+# #         if valik == 0:
+# #             uus_nimi = input("Sisesta uus kasutajanimi: ")
+# #             if uus_nimi in userstore:
+# #                 print("See kasutajanimi on juba kasutusel!")
+# #             else:
+# #                 userstore[uus_nimi] = userstore.pop(username)
+# #                 print("Kasutajanimi muudetud edukalt!")
+
+# #             uus_parool = input("Sisesta uus parool: ")
+# #             if not uus_parool: # == None
+# #                     print("Parool ei saa olla tühi!")
+# #                     continue
+                
+# #                 # If it finds out you didn't follow anything pwend Sword Fight on the Heights IV
+# #             has_letter = any(uus_parool.isalpha() in uus_parool)
+# #             has_digit = any(uus_parool.isdigit() in uus_parool)
+# #             has_special = bool(re.search('[@_!#$%^&*()<>?/\|}{~:]', uus_parool))
+                
+# #             if not (has_letter and has_digit and has_special): # if not all requirements are met, you get pwend in SOHF
+# #                 print("Parool peab sisaldama nii tähti, numbreid kui ka erimärke")
+# #                 continue
+# #             else:
+# #                  pass
+        
+# #             userstore[username] = uus_parool
+# #             print("Parool muudetud edukalt!")
+    
+# #         elif valik == 0:
+# #             break
+# #         return userstore
+
+# def muuda_kasutajat(users_list: list) -> list:
 #     """
 #     Lubab kasutajal muuta oma kasutajanime või parooli.
+#     Kasutajate andmed on listis kujul [(kasutajanimi1, parool1)...]
 #     """
 #     while True:
-#         # Autentimine enne muutmist
-#         print("Kas te tahate mudada midagi?: ")
+#         print("Kas te tahate midagi muuta?")
+#         tries = 4
 
-#         tries=4
-
+#         # Autentimine enne muutmist, duh
 #         print("Nuh uh, ma pean provima!")
 #         username = input("Kasutajanimi: ")
 #         password = input("Parool: ")
-    
-#         if username not in userstore or userstore[username] != password:
-#             while username not in userstore or userstore[username] != password:
-#                 print("Vale kasutajanimi või parool!")
-#                 tries -= 1
-#                 username = input("Kasutajanimi: ")
-#                 password = input("Parool: ")
-#                 if tries == 0:
-#                     print("Proovide arv on otsas.")
-#                     break
 
 #         print("1. Muuda kasutajanimi ja parool")
 #         print("0. Ei taha")
@@ -205,10 +254,10 @@ def autoriseerimine(users_list: list) -> bool:
     
 #         if valik == 0:
 #             uus_nimi = input("Sisesta uus kasutajanimi: ")
-#             if uus_nimi in userstore:
+#             if uus_nimi in users_list:
 #                 print("See kasutajanimi on juba kasutusel!")
 #             else:
-#                 userstore[uus_nimi] = userstore.pop(username)
+#                 users_list[uus_nimi] = users_list.remove(username)
 #                 print("Kasutajanimi muudetud edukalt!")
 
 #             uus_parool = input("Sisesta uus parool: ")
@@ -227,79 +276,69 @@ def autoriseerimine(users_list: list) -> bool:
 #             else:
 #                  pass
         
-#             userstore[username] = uus_parool
+#             users_list[username] = uus_parool
 #             print("Parool muudetud edukalt!")
     
 #         elif valik == 0:
 #             break
-#         return userstore
+#         return users_list
 
-def muuda_kasutajat(users_list: list) -> list:
-    """
-    Lubab kasutajal muuta oma kasutajanime või parooli.
-    Kasutajate andmed on listis kujul [(kasutajanimi1, parool1)...]
-    """
-    while True:
-        print("Kas te tahate midagi muuta?")
-        tries = 4
+# # 4
+# # def unu_par_tast(userstore):
+# #     username = input("Username to reset: ")
+# #     if username in userstore:
+# #         userstore[username] = "test"  # Set a default temporary password
+# #         print('Password reset to "test"')
+# #     else:
+# #         print("huh")
 
-        # Autentimine enne muutmist, duh
-        print("Nuh uh, ma pean provima!")
-        username = input("Kasutajanimi: ")
-        password = input("Parool: ")
-
-        print("1. Muuda kasutajanimi ja parool")
-        print("0. Ei taha")
-        valik = int(input("Sisesta valik: "))
+# # def unu_par_tast(usersstore: dict) -> dict:
+# #     """
+# #     I wanna kms
+# #     """
+# #     print("Kaboom, here goes your tower. Feel it crumble. Feel the power. Afunne codes this #### in 5 am")
+# #     while True:
+# #         username = input("Kasutajanimi: ")
     
-        if valik == 0:
-            uus_nimi = input("Sisesta uus kasutajanimi: ")
-            if uus_nimi in users_list:
-                print("See kasutajanimi on juba kasutusel!")
-            else:
-                users_list[uus_nimi] = users_list.remove(username)
-                print("Kasutajanimi muudetud edukalt!")
+# #         if username not in usersstore:
+# #             print("NUH UH!")
+# #             continue
+# #         else:
+# #             pass
+# #         password = input("Parool: ")
 
-            uus_parool = input("Sisesta uus parool: ")
-            if not uus_parool: # == None
-                    print("Parool ei saa olla tühi!")
-                    continue
+# #         if password not in usersstore:
+# #             print("NUH UH!")
+# #             continue
+# #         else:
+# #             pass
+# #         password_new = input("Parool: ")
+# #         has_letter = any(password_new.isalpha() in password_new)
+# #         has_digit = any(password_new.isdigit() in password_new)
+# #         has_special = bool(re.search('[@_!#$%^&*()<>?/\|}{~:]', password_new))
                 
-                # If it finds out you didn't follow anything pwend Sword Fight on the Heights IV
-            has_letter = any(uus_parool.isalpha() in uus_parool)
-            has_digit = any(uus_parool.isdigit() in uus_parool)
-            has_special = bool(re.search('[@_!#$%^&*()<>?/\|}{~:]', uus_parool))
-                
-            if not (has_letter and has_digit and has_special): # if not all requirements are met, you get pwend in SOHF
-                print("Parool peab sisaldama nii tähti, numbreid kui ka erimärke")
-                continue
-            else:
-                 pass
-        
-            users_list[username] = uus_parool
-            print("Parool muudetud edukalt!")
+# #         if not (has_letter and has_digit and has_special): # if not all requirements are met, you get pwend in SOHF
+# #             print("Parool peab sisaldama nii tähti, numbreid kui ka erimärke")
+# #             continue
+# #         else:
+# #             pass
+
+# #         usersstore[username] = password_new
     
-        elif valik == 0:
-            break
-        return users_list
+# #         print(f"Sinu uus parool: {password_new}")
+# #         break
+# #     return usersstore
 
-# 4
-# def unu_par_tast(userstore):
-#     username = input("Username to reset: ")
-#     if username in userstore:
-#         userstore[username] = "test"  # Set a default temporary password
-#         print('Password reset to "test"')
-#     else:
-#         print("huh")
 
-# def unu_par_tast(usersstore: dict) -> dict:
+# def unu_par_tast(usersstore: list) -> list:
 #     """
 #     I wanna kms
+#     Usersstore on nüüd loend topeltest: [("user1", "pass1")]
 #     """
 #     print("Kaboom, here goes your tower. Feel it crumble. Feel the power. Afunne codes this #### in 5 am")
 #     while True:
 #         username = input("Kasutajanimi: ")
-    
+       
 #         if username not in usersstore:
 #             print("NUH UH!")
 #             continue
@@ -322,47 +361,190 @@ def muuda_kasutajat(users_list: list) -> list:
 #             continue
 #         else:
 #             pass
-
-#         usersstore[username] = password_new
-    
-#         print(f"Sinu uus parool: {password_new}")
-#         break
-#     return usersstore
+# # 5
+# def lõpetamine():
+#   print("lõpetamine")
 
 
-def unu_par_tast(usersstore: list) -> list:
+def registreerimine() -> tuple:
     """
-    I wanna kms
-    Usersstore on nüüd loend topeltest: [("user1", "pass1")]
+    See funktsioon küsib kasutajalt kasutajanime ja parooli.
     """
-    print("Kaboom, here goes your tower. Feel it crumble. Feel the power. Afunne codes this #### in 5 am")
     while True:
-        username = input("Kasutajanimi: ")
-       
-        if username not in usersstore:
-            print("NUH UH!")
+        username = input("Sisesta sinu kasutajanimi: ")
+        if not username:
+            print("Kasutajanimi ei saa olla tühi!")
             continue
-        else:
-            pass
-        password = input("Parool: ")
 
-        if password not in usersstore:
-            print("NUH UH!")
+        try:
+            tehe = int(input("Kas te tahate luua parooli iseseisvalt või AI-ga [1, 2]: "))
+            if tehe not in [1, 2]:
+                print("Palun sisesta kas 1 või 2")
+                continue
+        except ValueError:
+            print("Palun sisesta number 1 või 2")
             continue
-        else:
-            pass
-        password_new = input("Parool: ")
-        has_letter = any(password_new.isalpha() in password_new)
-        has_digit = any(password_new.isdigit() in password_new)
-        has_special = bool(re.search('[@_!#$%^&*()<>?/\|}{~:]', password_new))
+
+        if tehe == 1:
+            while True:
+                password = input("Sisesta sinu parool (peab sisaldama tähti, numbreid ja erimärke): ")
+                if not password:
+                    print("Parool ei saa olla tühi!")
+                    continue
                 
-        if not (has_letter and has_digit and has_special): # if not all requirements are met, you get pwend in SOHF
-            print("Parool peab sisaldama nii tähti, numbreid kui ka erimärke")
-            continue
+                # Check password requirements
+                has_letter = any(c.isalpha() for c in password)
+                has_digit = any(c.isdigit() for c in password)
+                has_special = bool(re.search('[@_!#$%^&*()<>?/\|}{~:]', password))
+                
+                if not (has_letter and has_digit and has_special):
+                    print("Parool peab sisaldama nii tähti, numbreid kui ka erimärke")
+                    continue
+                else:
+                    break
+
+        elif tehe == 2:
+            # Generate random password
+            letters = string.ascii_letters
+            digits = string.digits
+            special_chars = string.punctuation
+            selection_list = letters + digits + special_chars
+            password_len = 10
+            password = ''.join(secrets.choice(selection_list) for _ in range(password_len))
+            print(f"Teie genereeritud parool on: {password}")
+            
+        return tehe, username, password
+
+def autoriseerimine(users_list: list) -> bool:
+    """
+    Kontrollib, kas kasutaja sisestas õige kasutajanime ja parooli.
+    Kasutajate andmed on listis kujul [(kasutajanimi1, parool1), ...]
+    """
+    username = input("Sisesta kasutajanimi: ")
+    password = input("Sisesta parool: ")
+    
+    for user in users_list:
+        if user[0] == username and user[1] == password:
+            print("Sisselogimine õnnestus!")
+            return True
+    
+    print("Vale kasutajanimi või parool!")
+    return False
+
+def muuda_kasutajat(users_list: list) -> list:
+    """
+    Lubab kasutajal muuta oma kasutajanime või parooli.
+    """
+    username = input("Sisesta praegune kasutajanimi: ")
+    password = input("Sisesta praegune parool: ")
+    
+    # Check if user exists
+    user_found = None
+    for i, user in enumerate(users_list):
+        if user[0] == username and user[1] == password:
+            user_found = i
+            break
+    
+    if user_found is None:
+        print("Vale kasutajanimi või parool!")
+        return users_list
+    
+    print("\n1. Muuda kasutajanimi")
+    print("2. Muuda parool")
+    print("3. Muuda mõlemad")
+    print("0. Tagasi")
+    
+    try:
+        valik = int(input("Vali tegevus: "))
+    except ValueError:
+        print("Vale valik!")
+        return users_list
+    
+    if valik == 1:
+        uus_nimi = input("Sisesta uus kasutajanimi: ")
+        # Check if username already exists
+        if any(user[0] == uus_nimi for user in users_list):
+            print("See kasutajanimi on juba kasutusel!")
         else:
-            pass
-# 5
+            users_list[user_found] = (uus_nimi, users_list[user_found][1])
+            print("Kasutajanimi muudetud edukalt!")
+    
+    elif valik == 2:
+        while True:
+            uus_parool = input("Sisesta uus parool (peab sisaldama tähti, numbreid ja erimärke): ")
+            if not uus_parool:
+                print("Parool ei saa olla tühi!")
+                continue
+                
+            has_letter = any(c.isalpha() for c in uus_parool)
+            has_digit = any(c.isdigit() for c in uus_parool)
+            has_special = bool(re.search('[@_!#$%^&*()<>?/\|}{~:]', uus_parool))
+                
+            if not (has_letter and has_digit and has_special):
+                print("Parool peab sisaldama nii tähti, numbreid kui ka erimärke")
+                continue
+            else:
+                users_list[user_found] = (users_list[user_found][0], uus_parool)
+                print("Parool muudetud edukalt!")
+                break
+    
+    elif valik == 3:
+        uus_nimi = input("Sisesta uus kasutajanimi: ")
+        # Check if username already exists
+        if any(user[0] == uus_nimi for user in users_list):
+            print("See kasutajanimi on juba kasutusel!")
+        else:
+            while True:
+                uus_parool = input("Sisesta uus parool (peab sisaldama tähti, numbreid ja erimärke): ")
+                if not uus_parool:
+                    print("Parool ei saa olla tühi!")
+                    continue
+                    
+                has_letter = any(c.isalpha() for c in uus_parool)
+                has_digit = any(c.isdigit() for c in uus_parool)
+                has_special = bool(re.search('[@_!#$%^&*()<>?/\|}{~:]', uus_parool))
+                    
+                if not (has_letter and has_digit and has_special):
+                    print("Parool peab sisaldama nii tähti, numbreid kui ka erimärke")
+                    continue
+                else:
+                    users_list[user_found] = (uus_nimi, uus_parool)
+                    print("Kasutajanimi ja parool muudetud edukalt!")
+                    break
+    
+    return users_list
+
+def unu_par_tast(users_list: list) -> list:
+    """
+    Parooli taastamine
+    """
+    username = input("Sisesta kasutajanimi: ")
+    
+    # Find user
+    user_found = None
+    for i, user in enumerate(users_list):
+        if user[0] == username:
+            user_found = i
+            break
+    
+    if user_found is None:
+        print("Sellist kasutajat ei leitud!")
+        return users_list
+    
+    # Generate new password
+    letters = string.ascii_letters
+    digits = string.digits
+    special_chars = string.punctuation
+    selection_list = letters + digits + special_chars
+    password_len = 10
+    uus_parool = ''.join(secrets.choice(selection_list) for _ in range(password_len))
+    
+    users_list[user_found] = (username, uus_parool)
+    print(f"Sinu uus parool on: {uus_parool}")
+    print("Palun muuda see peale sisselogimist!")
+    
+    return users_list
+
 def lõpetamine():
-  print("lõpetamine")
-
-
+    print("Programm lõpetab töö.")
+    exit()
