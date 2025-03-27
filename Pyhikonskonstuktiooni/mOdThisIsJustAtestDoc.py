@@ -410,7 +410,7 @@ def registreerimine() -> tuple:
             special_chars = string.punctuation
             selection_list = letters + digits + special_chars
             password_len = 10
-            password = ''.join(secrets.choice(selection_list) for _ in range(password_len))
+            password = ''.join(secrets.choice(selection_list) for i in range(password_len))
             print(f"Teie genereeritud parool on: {password}")
             
         return tehe, username, password
