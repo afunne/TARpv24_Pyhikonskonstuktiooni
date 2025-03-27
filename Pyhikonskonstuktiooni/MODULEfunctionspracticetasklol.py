@@ -142,7 +142,7 @@ def registreerimine() -> tuple:
 def autoriseerimine(users_list: list) -> bool:
     """
     Kontrollib, kas kasutaja sisestas õige kasutajanime ja parooli.
-    Kasutajate andmed on listis kujul [(kasutajanimi1, parool1), (kasutajanimi2, parool2), ...]
+    Kasutajate andmed on listis kujul [(kasutajanimi1, parool1)...]
     """
     username = input("Sisesta kasutajanimi: ")
     password = input("Sisesta parool: ")
@@ -217,7 +217,7 @@ def autoriseerimine(users_list: list) -> bool:
 def muuda_kasutajat(users_list: list) -> list:
     """
     Lubab kasutajal muuta oma kasutajanime või parooli.
-    Kasutajate andmed on listis kujul [(kasutajanimi1, parool1), (kasutajanimi2, parool2), ...]
+    Kasutajate andmed on listis kujul [(kasutajanimi1, parool1)...]
     """
     while True:
         print("Kas te tahate midagi muuta?")
@@ -322,7 +322,7 @@ def muuda_kasutajat(users_list: list) -> list:
 def unu_par_tast(usersstore: list) -> list:
     """
     I wanna kms
-    Usersstore is now a list of tuples: [("user1", "pass1"), ("user2", "pass2")]
+    Usersstore on nüüd loend topeltest: [("user1", "pass1")]
     """
     print("Kaboom, here goes your tower. Feel it crumble. Feel the power. Afunne codes this #### in 5 am")
     while True:
