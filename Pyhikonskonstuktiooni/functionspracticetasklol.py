@@ -129,7 +129,7 @@ while True:
 
     try:
         choice = int(input("Sisesta valik: "))
-    except ValueError:
+    except:
         print("Palun sisesta number!")
         continue
 
@@ -158,7 +158,6 @@ while True:
         
     elif choice == 0:
         lõpetamine()
-        
     else:
         print("Vale valik! Proovi uuesti.")
 
