@@ -23,7 +23,7 @@ def registreerimine(users_list: list) -> list:
 
         try:
             tehe = int(input("Kas tahad parooli luua iseseisvalt (1) või auto-ga (2)? "))
-        except ValueError:
+        except:
             print("Palun sisesta number 1 või 2!")
             continue
 
@@ -92,9 +92,9 @@ def autoriseerimine(users_list: list) -> bool:
         if user == username and pwd == password:
             print("Sisselogimine õnnestus!")
             return True
-
-    print("Vale kasutajanimi või parool!")
-    return False
+        else:
+            print("Vale kasutajanimi või parool!")
+            return False
 
 
 def muuda_kasutajat(users_list: list) -> list:
@@ -103,6 +103,27 @@ def muuda_kasutajat(users_list: list) -> list:
     """
     username = input("Sisesta praegune kasutajanimi: ").strip()
     password = input("Sisesta praegune parool: ").strip()
+    if username and password in users_list:
+        print("Tere tagasi!")
+    if not username and password in users_list:
+        print("Vale kasutajanimi või parool!")
+        tries = 4
+        while tries != 0:
+            username = input("Sisesta praegune kasutajanimi: ").strip()
+            password = input("Sisesta praegune parool: ").strip()
+            if username and password in users_list:
+                print("Tere tagasi!")
+                break
+            if not username and password in users_list:
+                print("Vale kasutajanimi või parool!")
+                tries -= 4
+                if tries == 0:
+                    print("Sissetungija!")
+                    exit()
+                else:
+                    continue
+            
+
 
     # function enumerate suggested by TS
 
@@ -113,44 +134,69 @@ def muuda_kasutajat(users_list: list) -> list:
 
     for i, (user, pwd) in enumerate(users_list):
     # Check if the username and password match
-        if user == username and pwd == password:
+        if user == username or uus_nimi and pwd == password or uus_parool:
         
             # Ask the user for a new username and password
             uus_nimi = input("Sisesta uus kasutajanimi: ").strip()
-            uus_parool = input("Sisesta uus parool: ").strip()
-
+            tehe = int(input("Kas tahad parooli luua iseseisvalt (1) või auto-ga (2)? "))
+            if tehe == 1:
+                while True:
+                    uus_parool = input("Sisesta parool: ")
+                    if not uus_parool:
+                        print("Parool ei saa olla tühi!")
+                        continue
             # Check if the new password contains letters, digits, and special characters
-            has_letter = False
-            has_digit = False
-            has_special = False
+                    has_letter = False
+                    has_digit = False
+                    has_special = False
         
-            # Loop through each character in the new password to check conditions
-            for c in uus_parool:
-                if c.isalpha():
-                    has_letter = True
-                elif c.isdigit():
-                    has_digit = True
-                elif re.search(r'[@_!#$%^&*()<>?/\|}{~:]', c):
-                    has_special = True
+                    # Loop through each character in the new password to check conditions
+                    for c in uus_parool:
+                        if c.isalpha():
+                            has_letter = True
+                        elif c.isdigit():
+                            has_digit = True
+                        elif re.search(r'[@_!#$%^&*()<>?/\|}{~:]', c):
+                            has_special = True
 
-        # Check if all required conditions are met for the new password
-        # Thanks to TS once again
-        if has_letter and has_digit and has_special: # if they all = True
-            print("Parool on sobiv.")
-        else:
-            print("Parool peab sisaldama tähti, numbreid ja erimärke.")
+                        # Check if all required conditions are met for the new password
+                        # Thanks to TS once again
+                        if has_letter and has_digit and has_special: # if they all = True
+                            print("Parool on sobiv.")
+                        else:
+                            print("Parool peab sisaldama tähti, numbreid ja erimärke.")
 
-            if not (has_letter and has_digit and has_special): # if they aren't True
-                print("Parool peab sisaldama tähti, numbreid ja erimärke!")
-                continue
+                            if not (has_letter and has_digit and has_special): # if they aren't True
+                                print("Parool peab sisaldama tähti, numbreid ja erimärke!")
+                                continue
+            if tehe ==2:
+                # Define the pool of characters (letters, digits, and punctuation)
+                letters = string.ascii_letters  # a-z, A-Z
+                digits = string.digits          # 0-9
+                punctuation = string.punctuation # Special characters (!, @, #, etc.)
 
-            users_list[i] = (uus_nimi, uus_parool)
-            print("Kasutaja andmed uuendatud!")
-            return users_list
+                # Combine all possible characters into one string
+                characters = letters + digits + punctuation
 
-    print("Vale kasutajanimi või parool!")
-    return users_list
+                # Initialize an empty string to store the password
+                uus_parool = ""
 
+                # Loop 10 times to pick 10 random characters from the pool
+                for i in range(10):
+                    # Randomly choose a character from the pool of characters
+                    random_char = secrets.choice(characters)
+    
+                    # Append the chosen character to the password string
+                    uus_parool += random_char
+
+                # Print the generated password
+                print(f"Sinu genereeritud parool: {uus_parool}")
+        users_list.remove((username, password))
+        username = uus_nimi
+        password = uus_parool
+        users_list.append((uus_nimi, uus_parool))
+        print("Registreerimine õnnestus!")
+        return users_list
 
 def unu_par_tast(users_list: list) -> list:
     """
@@ -171,7 +217,7 @@ def unu_par_tast(users_list: list) -> list:
                 random_char = secrets.choice(string.ascii_letters + string.digits)
                 new_password += random_char
             # Update the user's password in the list
-            users_list[i] = (user, new_password)
+            users_list = (user, new_password)
             # Print the new password for the user
             print(f"Sinu uus parool: {new_password}")
             # Return the updated list
