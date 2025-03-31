@@ -3,23 +3,26 @@ import secrets
 import string
 import os
 
+# some things have been done in Discord VC. Some things are written short but it works the same
+
 def registreerimine(users_list: list) -> list:
     """
     Registreerib uue kasutaja ja lisab selle loendisse.
     """
     while True:
-        username = input("Sisesta kasutajanimi: ").strip()
-        if not username:
+        username = input("Sisesta kasutajanimi: ").strip() # sometimes it would give out errors after copying the password, it just here so no mistakes can happen
+        if not username: # the saem as usernaem = "" or username is None
             print("Kasutajanimi ei saa olla tühi!")
             continue
 
+        # checks the username only
         for user, _ in users_list:
             if user == username:
                 print("See kasutajanimi on juba võetud! Proovi teist.")
                 continue
 
         try:
-            tehe = int(input("Kas tahad parooli luua iseseisvalt (1) või AI-ga (2)? "))
+            tehe = int(input("Kas tahad parooli luua iseseisvalt (1) või auto-ga (2)? "))
         except ValueError:
             print("Palun sisesta number 1 või 2!")
             continue
@@ -101,6 +104,13 @@ def muuda_kasutajat(users_list: list) -> list:
     username = input("Sisesta praegune kasutajanimi: ").strip()
     password = input("Sisesta praegune parool: ").strip()
 
+    # function enumerate suggested by TS
+
+    # enumerate() function adds a counter to each item in a list or other iterable.
+    # It turns the iterable into something we can loop through, where each item comes with its number (starting from 0 by default).
+    # We can also turn it into a list of (number, item) pairs using list().
+
+
     for i, (user, pwd) in enumerate(users_list):
     # Check if the username and password match
         if user == username and pwd == password:
@@ -124,12 +134,13 @@ def muuda_kasutajat(users_list: list) -> list:
                     has_special = True
 
         # Check if all required conditions are met for the new password
-        if has_letter and has_digit and has_special:
+        # Thanks to TS once again
+        if has_letter and has_digit and has_special: # if they all = True
             print("Parool on sobiv.")
         else:
             print("Parool peab sisaldama tähti, numbreid ja erimärke.")
 
-            if not (has_letter and has_digit and has_special):
+            if not (has_letter and has_digit and has_special): # if they aren't True
                 print("Parool peab sisaldama tähti, numbreid ja erimärke!")
                 continue
 
@@ -147,24 +158,24 @@ def unu_par_tast(users_list: list) -> list:
     """
     username = input("Sisesta kasutajanimi: ").strip()
 
+    # thanks to TS helping me out here, password generator wrote time mutiple times, so this code kinda just prints the final result
+    # at least it should
+
+    # _ here is supposed to be password but it doesn't include it
     for i, (user, _) in enumerate(users_list):
     # Check if the current user matches the entered username
         if user == username:
         # Generate a new password with 8 characters (letters and digits)
             new_password = ""
-            for _ in range(8):
+            for i in range(8): # could be more, I jsut didn't want more checks to be honest :P
                 random_char = secrets.choice(string.ascii_letters + string.digits)
                 new_password += random_char
-        
             # Update the user's password in the list
             users_list[i] = (user, new_password)
-        
             # Print the new password for the user
             print(f"Sinu uus parool: {new_password}")
-        
             # Return the updated list
             return users_list
-
     print("Kasutajat ei leitud!")
     return users_list
 
