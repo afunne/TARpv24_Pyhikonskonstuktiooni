@@ -100,7 +100,7 @@ def Keskel_palk(p:list,i:list):
 
     if question == 1:
         # median_DEL= p < med_p # len(complete[0]) < 30
-        k=i.count(i)
+        k=i.len()
         for i in k:
             if i < med_p:
                 ind=i.index(k)
@@ -121,5 +121,23 @@ def Väiksem_palk(p:list, i:list):
     print(f"Minimaalne palk: {min_p} ({', '.join(min_i)})")
 
 
+def otsima_palkjanimi(p:list, i:list):
+    """
+    Сделать поиск зарплаты по имени человека. Учесть, что имена могут повторяться
+    """
+    sisse_nimi = input("Sisesta töötaja nimi: ")
+    if sisse_nimi == None or sisse_nimi not in i:
+        print("nuh uh")
+    else:
+        print(sisse_nimi)
+        sisse_palk = [i for i, pop in zip(i, p) if pop == ]
+
+        # max_p = max(p)
+        # max_i = [i for i, pop in zip(i, p) if pop == max_p]
 
 
+    # hewo_p = p
+    # hewo_i = [i for i, pop in zip(i, p) if pop == hewo_p]
+
+    # print("\nAndme:")
+    # print(f"Minimaalne palk: {hewo_p} ({', '.join(hewo_i)})")

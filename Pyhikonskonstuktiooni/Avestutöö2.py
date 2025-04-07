@@ -48,9 +48,10 @@ while True:
             print()
             Väiksem_palk(palgad, inimesed)
         
-        elif choice==1:
+        elif choice==9:
             #yada yada yada
             print()
+            otsima_palkjanimi(palgad, inimesed)
         
         elif choice==1:
             #yada yada yada
