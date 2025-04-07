@@ -88,7 +88,7 @@ import sys
 
 def Linnad() -> tuple:
     """
-    Kogub linnade nimed ja rahvaarvud, seejärel leiab linna, mille rahvaarv on maksimaalne ja minimaalne.
+    Kogub linnade nimed ja rahvaarvud, seejÃ¤rel leiab linna, mille rahvaarv on maksimaalne ja minimaalne.
     """
     cities = []
     populations = []
@@ -114,7 +114,14 @@ def Linnad() -> tuple:
 
     # Additional feature to look up specific city
     while True:
-        choice = int(input("1 - kui palju n/ 2 - Kuvatakse linnade loetelu ja elanike arv tähestikulises järjekorras n/ 3 - Sisestage elanike arv ja kuvage lähima ligikaudse elanike arvuga linna nimi n/ 4 - Leia vähem kui n elanikuga linnad n/ "))
+        print(
+            """
+1 - kui palju
+2 - Kuvatakse linnade loetelu ja elanike arv tÃ¤hestikulises jÃ¤rjekorras
+3 - Sisestage elanike arv ja kuvage lÃ¤hima ligikaudse elanike arvuga linna nimi 
+4 - Leia vÃ¤hem kui n elanikuga linnad
+            """)
+        choice = int(input("Sisesta sinu valik"))
         if choice == 3:
             city_data = list(zip(cities, populations))
             # index = cities.index(choice)
@@ -133,7 +140,7 @@ def Linnad() -> tuple:
 
             population_difference = abs(populations[1] - target_pop)
             closest_city = min(city_data, key=population_difference)
-            print(f"Lähim linn: {closest_city[0]} ({closest_city[1]} elanikud)")
+            print(f"LÃ¤him linn: {closest_city[0]} ({closest_city[1]} elanikud)")
             # for city, pop in city_data:
             #     if pop == target_pop:
             #         print(city)
