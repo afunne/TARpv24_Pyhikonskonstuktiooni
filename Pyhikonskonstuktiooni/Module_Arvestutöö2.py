@@ -22,6 +22,7 @@ def Lisa_andmed(p:list, i:list):
 
 def Kutsuta_andmed(p:list, i:list):
     """
+    Isiku ja tema palga kustutada(nimi sisestab kasutaja)
     """
     while True:
         try:
@@ -44,6 +45,7 @@ def Kutsuta_andmed(p:list, i:list):
 
 def Suurim_palk(p:list, i:list):
     """
+    Näita kõige suurim palk listist
     """
     max_p = max(p)
     max_i = []
@@ -67,6 +69,7 @@ def Suurim_palk(p:list, i:list):
 
 def sorteerimine(p:list, i:list):
     """
+    Järjestada palgad kasvavas ja kahanevas järjekorras koos nimedega
     """
     v=input("Vali märk: > (kasvav) või < (kahanev): ")
     for n in range(0,len(i)):
@@ -79,6 +82,7 @@ def sorteerimine(p:list, i:list):
 
 def Võrdsed_palgad(p:list,i:list):
     """
+    Teada saada, kes saavad võrdset palka, leida, kui palju neid on ja kuvada nende andmed ekraanile
     """
     hulk=set(p)
     print(hulk)
@@ -93,6 +97,9 @@ def Võrdsed_palgad(p:list,i:list):
                 ind+=1
 
 def Keskel_palk(p:list,i:list):
+    """
+    Näita keskel palk
+    """
     med_p = statistics.median(p)
 
     print("\nAndme:")
@@ -101,10 +108,10 @@ def Keskel_palk(p:list,i:list):
     question=int(input("Yada, yada 1 - ja, 0 - ei: "))
 
     if question == 1:
-        for idx in range(len(p) - 1, -1, -1):
-            if p[idx] < med_p:
-                p.pop(idx)
-                i.pop(idx)
+        for x in range(len(p)):
+            if p[x] < med_p:
+                p.pop(x)
+                i.pop(x)
         print("Andmed on kustutatud")
         print(f"\n{i}\n{p}")
     elif question == 0:
@@ -112,6 +119,7 @@ def Keskel_palk(p:list,i:list):
 
 def Väiksem_palk(p:list, i:list):
     """
+    Näita kõige minimaalsem palk
     """
     min_p = min(p)
     min_i = []
@@ -126,34 +134,43 @@ def Väiksem_palk(p:list, i:list):
 
 def otsima_palkjanimi(p:list, i:list):
     """
-    Otsib palga(d) nime järgi. Arvestab, et nimi võib esineda mitu korda.
+    Otsib palga(d) nime järgi. Arvestab, et nimi võib esineda mitu korda
     """
-    sisse_nimi = input("Sisesta töötaja nimi: ")
-    if not sisse_nimi or sisse_nimi not in i:
-        print("Sellist nime ei leitud.")
-    else:
-        seotud_palgad = []
-        for nimi, palk in zip(i, p):
-            if nimi == sisse_nimi:
-                seotud_palgad.append(palk)
+    while True:
+        sisse_nimi = input("Sisesta töötaja nimi: ")
+        if not sisse_nimi or sisse_nimi not in i:
+            print("Sellist nime ei leitud.")
+            continue
+        else:
+            seotud_palgad = []
+            for nimi, palk in zip(i, p):
+                if nimi == sisse_nimi:
+                    seotud_palgad.append(palk)
+                    break
 
 
 def tulevane_palk(p: list, i: list):
-    nimi = input("Sisesta töötaja nimi: ")
-    try:
-        T = int(input("Mitu aastat edasi vaadata (T): "))
-    except:
-        print("Palun sisesta korrektne arv.")
+    """
+    Tulevik palk
+    """
+    while True:
+        nimi = input("Sisesta töötaja nimi: ")
+        try:
+            T = int(input("Mitu aastat edasi vaadata: "))
+        except:
+            print("Palun sisesta korrektne arv.")
+            continue
 
-    if nimi not in i:
-        print("Sellist nime ei leitud.")
+        if nimi not in i:
+            print("Sellist nime ei leitud.")
+            continue
 
-    print(f"\n{nimi} praegused palgad ja tulevased palgad {T} aasta pärast (+5% aastas):")
-    for nim, palk in zip(i, p):
-        if nim == nimi:
-            tulev_palk = round(palk * (0.05 ** T), 2)
-            print(f"Palk {palk} → {tulev_palk} eurot")
-
+        print(f"\n{nimi} praegused palgad ja tulevased palgad {T} aasta pärast (+5% aastas):")
+        for nim, palk in zip(i, p):
+            if nim == nimi:
+                tulev_palk = round(palk * (0.05 ** T), 2)
+                print(f"Palk {palk} -> {tulev_palk} eurot")
+                break
         # max_p = max(p)
         # max_i = [i for i, pop in zip(i, p) if pop == max_p]
 
@@ -162,4 +179,4 @@ def tulevane_palk(p: list, i: list):
     # hewo_i = [i for i, pop in zip(i, p) if pop == hewo_p]
 
     # print("\nAndme:")
-    # print(f"Minimaalne palk: {hewo_p} ({', '.join(hewo_i)})")
+    # print(f"Minimaalne palk: {hewo_p} ({', '.join(hewo_i)})")    
