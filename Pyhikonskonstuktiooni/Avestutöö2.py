@@ -18,6 +18,7 @@ while True:
 7 - Näita kõige minimaalsem palk
 8 - Otsib palga(d) nime järgi. Arvestab, et nimi võib esineda mitu korda
 9 - Tulevik palk
+:3 -_-_         _-_- :3
 """)
     try:
         choice=int(input("Mida te tahate teha? "))
