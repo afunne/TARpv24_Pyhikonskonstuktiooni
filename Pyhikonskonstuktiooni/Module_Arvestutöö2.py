@@ -46,9 +46,11 @@ def Suurim_palk(p:list, i:list):
     """
     """
     max_p = max(p)
-    # min_p = min(p)
+    max_i = []
 
-    max_i = [i for i, pop in zip(i, p) if pop == max_p]
+    for nimi, palk in zip(i, p):
+        if palk == max_p:
+            max_i.append(nimi)
     # min_i = [i for i, pop in zip(i, p) if pop == min_p]
 
     print("\nAndme:")
@@ -99,15 +101,12 @@ def Keskel_palk(p:list,i:list):
     question=int(input("Yada, yada 1 - ja, 0 - ei: "))
 
     if question == 1:
-        # median_DEL= p < med_p # len(complete[0]) < 30
-        k=i.len()
-        for i in k:
-            if i < med_p:
-                ind=i.index(k)
-                i.pop=(ind)
-                p.pop=(ind)
-                print(f"Andmed on kustutatud")
-                print(f"/n {i} /n {p}")
+        for idx in range(len(p) - 1, -1, -1):
+            if p[idx] < med_p:
+                p.pop(idx)
+                i.pop(idx)
+        print("Andmed on kustutatud")
+        print(f"\n{i}\n{p}")
     elif question == 0:
         pass
 
@@ -115,7 +114,11 @@ def Väiksem_palk(p:list, i:list):
     """
     """
     min_p = min(p)
-    min_i = [i for i, pop in zip(i, p) if pop == min_p]
+    min_i = []
+
+    for nimi, palk in zip(i, p):
+        if palk == min_p:
+            min_i.append(nimi)
 
     print("\nAndme:")
     print(f"Minimaalne palk: {min_p} ({', '.join(min_i)})")
@@ -123,14 +126,33 @@ def Väiksem_palk(p:list, i:list):
 
 def otsima_palkjanimi(p:list, i:list):
     """
-    Сделать поиск зарплаты по имени человека. Учесть, что имена могут повторяться
+    Otsib palga(d) nime järgi. Arvestab, et nimi võib esineda mitu korda.
     """
     sisse_nimi = input("Sisesta töötaja nimi: ")
-    if sisse_nimi == None or sisse_nimi not in i:
-        print("nuh uh")
+    if not sisse_nimi or sisse_nimi not in i:
+        print("Sellist nime ei leitud.")
     else:
-        print(sisse_nimi)
-        sisse_palk = [i for i, pop in zip(i, p) if pop == ]
+        seotud_palgad = []
+        for nimi, palk in zip(i, p):
+            if nimi == sisse_nimi:
+                seotud_palgad.append(palk)
+
+
+def tulevane_palk(p: list, i: list):
+    nimi = input("Sisesta töötaja nimi: ")
+    try:
+        T = int(input("Mitu aastat edasi vaadata (T): "))
+    except:
+        print("Palun sisesta korrektne arv.")
+
+    if nimi not in i:
+        print("Sellist nime ei leitud.")
+
+    print(f"\n{nimi} praegused palgad ja tulevased palgad {T} aasta pärast (+5% aastas):")
+    for nim, palk in zip(i, p):
+        if nim == nimi:
+            tulev_palk = round(palk * (0.05 ** T), 2)
+            print(f"Palk {palk} → {tulev_palk} eurot")
 
         # max_p = max(p)
         # max_i = [i for i, pop in zip(i, p) if pop == max_p]
