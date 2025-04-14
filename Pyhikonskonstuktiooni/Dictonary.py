@@ -17,7 +17,6 @@ while True:
 3 - Lisa uus sõna
 4 - Paranda sõna
 5 - Testi teadmisi
-6 - Välju
 0 - lõppimine
 """
 )
@@ -29,21 +28,22 @@ while True:
 
     if valik == 1:
         print()
-
+        tolgi_est_rus(sonastik)
     elif valik == 2:
         print()
+        tolgi_rus_est(sonastik)
 
     elif valik == 3:
         print()
+        lisa_sona()
 
     elif valik == 4:
         print()
+        paranda_sona()
 
     elif valik == 5:
         print()
-
-    elif valik == 6:
-        print()
+        testi_teadmisi()
 
     elif valik == 0:
         print("Bye, bye! <3 \n*lehvitab käega*")
