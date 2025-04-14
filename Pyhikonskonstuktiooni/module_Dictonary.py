@@ -20,8 +20,15 @@
 # paranda_sona()
 
 # testi_teadmisi()
+import random
 
-sonastik={}
+sonastik = {
+    'koer': 'собака',
+    'kass': 'кошка',
+    'maja': 'дом',
+    'auto': 'машина',
+    'päike': 'солнце'
+}
 
 def tolgi_est_rus(sona):
     """
@@ -71,31 +78,45 @@ def testi_teadmisi():
     """
     correct = 0
     total = 0
-    
-    print("\nTestime eesti-vene suunal:")
-    for est, rus in sonastik.items():
-        answer = input(f"Kuidas tõlgitakse '{est}' vene keelde? ").lower()
-        if answer == rus:
-            print("Õige!")
-            correct += 1
-        else:
-            print(f"Vale! Õige vastus on '{rus}'")
-        total += 1
-    
-    print("\nTestime vene-eesti suunal:")
-    for est, rus in sonastik.items():
-        answer = input(f"Kuidas tõlgitakse '{rus}' eesti keelde? ").lower()
-        if answer == est:
-            print("Õige!")
-            correct += 1
-        else:
-            print(f"Vale! Õige vastus on '{est}'")
-        total += 1
+    confirm=int(input("Kas te tahate? 1 - ja, 0 - ei: "))
+    if confirm == 1:
+        while True:
+            testlvl= int(input("vene - 1, eesti - 2, mitte midagi - 0 "))
+            if testlvl == 1:
+                est = random.choice(list(sonastik))
+                print("\nTestime eesti-vene suunal:")
+                print(f"{est} translation...")
+                useranswer=input('')
+                    # import random
+                    # d = {sonastik}
+                    # # est = random.choice(list(d.values()))
+                    # # answer = input(f"Kuidas tõlgitakse '{est}' vene keelde? ").lower()
+                if useranswer == rus:
+                    print("Õige!")
+                    correct += 1
+                else:
+                    print(f"Vale! Õige vastus on '{rus}'")
+                    total += 1
 
+            elif testlvl == 2:
+                print("\nTestime vene-eesti suunal:")
+                for est, rus in sonastik.items():
+                    answer = input(f"Kuidas tõlgitakse '{rus}' eesti keelde? ").lower()
+                    if answer == est:
+                        print("Õige!")
+                        correct += 1
+                    else:
+                        print(f"Vale! Õige vastus on '{est}'")
+                        total += 1
+            elif testlvl == 0:
+                if total > 0:
+                    result = (correct / total) * 100
+                    print(f"\nTest läbitud! Õigete vastuste protsent: {result:.2f}%")
+            else:
+                print(f"\nSinu result: õiged {correct} ja valed {total}, hea töö!")
+                break
 
-    result = (correct / total) * 100
-    if total > 0:
-        print(f"\nTest läbitud! Õigete vastuste protsent: {result:.2f}%")
+    elif confirm == 0:
+        print("alr")
     else:
-        print("Sõnastik on tühi, ei saa testida.")
-
+        print(":|")

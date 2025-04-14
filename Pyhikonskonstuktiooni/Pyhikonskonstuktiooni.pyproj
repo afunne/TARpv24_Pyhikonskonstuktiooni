@@ -37,6 +37,7 @@
     <Compile Include="Module_Arvestutöö2.py" />
     <Compile Include="module_Dictonary.py" />
     <Compile Include="reworkingsomethingsimthistiredpy.py" />
+    <Compile Include="textwork.py" />
     <Compile Include="ThisIsJustAtestDoc.py" />
     <Compile Include="WORLDEMINIGAMESV2.py" />
     <Compile Include="module2.py" />
@@ -50,6 +51,9 @@
     <Compile Include="Pyhikonskonstuktiooni.py" />
     <Compile Include="module_YEAHFUNCTIONSYUHUU.py" />
     <Compile Include="YEAHFUNCTIONSYUHUU.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TextFilework.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

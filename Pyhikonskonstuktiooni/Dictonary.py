@@ -1,15 +1,5 @@
 from module_Dictonary import *
 
-
-
-sonastik = {
-    'koer': 'собака',
-    'kass': 'кошка',
-    'maja': 'дом',
-    'auto': 'машина',
-    'päike': 'солнце'
-}
-
 while True:
     print("""
 1 - Tõlgi eesti -> vene
@@ -44,7 +34,6 @@ while True:
     elif valik == 5:
         print()
         testi_teadmisi()
-
     elif valik == 0:
         print("Bye, bye! <3 \n*lehvitab käega*")
         break
