@@ -24,14 +24,18 @@
 sonastik={}
 
 def tolgi_est_rus(sona):
-    """Translate from Estonian to Russian"""
+    """
+    Tõlge eesti keelest vene keelde
+    """
     word = input("Sisesta eesti keelne sõna: ").lower()
     translation = sona.get(word, "Sõna sõnastikus puudub")
     print(f"Tõlge: {translation}")
 
 
 def tolgi_rus_est(sona):
-    """Translate from Russian to Estonian"""
+    """
+    Tõlge vene keelest eesti keelde
+    """
     word = input("Sisesta vene keelne sõna: ").lower()
     translation = "Sõna sõnastikus puudub"
     for est, rus in sona.items():
@@ -41,14 +45,18 @@ def tolgi_rus_est(sona):
     print(f"Tõlge: {translation}")
 
 def lisa_sona():
-    """Add a new word to the dictionary"""
+    """
+    Uue sõna lisamine sõnaraamatusse
+    """
     est_sona = input("Sisesta eesti keelne sõna: ").lower()
     rus_sona = input("Sisesta vene tõlge: ").lower()
     sonastik[est_sona] = rus_sona
     print(f"Sõna '{est_sona}' lisatud sõnastikku!")
 
 def paranda_sona():
-    """Correct a word in the dictionary"""
+    """
+    Parandada sõna sõnaraamatus
+    """
     est_sona = input("Sisesta parandatav eesti keelne sõna: ").lower()
     if est_sona in sonastik:
         new_rus = input(f"Sisesta uus vene tõlge sõnale '{est_sona}': ").lower()
@@ -58,7 +66,9 @@ def paranda_sona():
         print("Sellist sõna sõnastikus pole.")
 
 def testi_teadmisi():
-    """Test user's vocabulary knowledge"""
+    """
+    Testi kasutaja sõnavara teadmisi
+    """
     correct = 0
     total = 0
     
@@ -81,7 +91,8 @@ def testi_teadmisi():
         else:
             print(f"Vale! Õige vastus on '{est}'")
         total += 1
-    
+
+
     result = (correct / total) * 100
     if total > 0:
         print(f"\nTest läbitud! Õigete vastuste protsent: {result:.2f}%")
