@@ -26,6 +26,7 @@
     <Compile Include="Dictonary.py" />
     <Compile Include="EmailPipeBomber.py" />
     <Compile Include="HTMLxPython.py" />
+    <Compile Include="modelRework.py" />
     <Compile Include="MODULEduh.py" />
     <Compile Include="MODULEfunctionspracticetasklol.py" />
     <Compile Include="module1.py" />
@@ -39,6 +40,7 @@
     <Compile Include="Module_Arvestutöö2.py" />
     <Compile Include="module_Dictonary.py" />
     <Compile Include="Module_EmailPipeBomber.py" />
+    <Compile Include="OldWorkRework.py" />
     <Compile Include="reworkingsomethingsimthistiredpy.py" />
     <Compile Include="textwork.py" />
     <Compile Include="ThisIsJustAtestDoc.py" />
@@ -59,6 +61,7 @@
   <ItemGroup>
     <Content Include="sonastik.txt" />
     <Content Include="TextFilework.txt" />
+    <Content Include="userlol.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
