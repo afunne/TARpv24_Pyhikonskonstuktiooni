@@ -1,5 +1,7 @@
 from module_Dictonary import *
 
+sonastik = lae_sonastik()
+
 while True:
     print("""
 1 - Tõlgi eesti -> vene
@@ -25,15 +27,15 @@ while True:
 
     elif valik == 3:
         print()
-        lisa_sona()
+        lisa_sona(sonastik)
 
     elif valik == 4:
         print()
-        paranda_sona()
+        paranda_sona(sonastik)
 
     elif valik == 5:
         print()
-        testi_teadmisi()
+        testi_teadmisi(sonastik)
     elif valik == 0:
         print("Bye, bye! <3 \n*lehvitab käega*")
         break

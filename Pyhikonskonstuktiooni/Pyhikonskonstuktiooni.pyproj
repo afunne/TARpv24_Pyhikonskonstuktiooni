@@ -53,6 +53,7 @@
     <Compile Include="YEAHFUNCTIONSYUHUU.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="sonastik.txt" />
     <Content Include="TextFilework.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
