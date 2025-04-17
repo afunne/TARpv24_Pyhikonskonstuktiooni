@@ -223,7 +223,7 @@ def testi_teadmisi(sonastik):
                 if total > 0:
                     result = (correct / total) * 100
                     print(f"\nTest lõppenud! Õiged vastused: {correct}, valed: {total - correct}")
-                    print(f"Protsent: {result:.2f}%")
+                    print(f"Protsent: {result:.1f}%")
                 else:
                     print("Testi ei tehtud.")
                 break
