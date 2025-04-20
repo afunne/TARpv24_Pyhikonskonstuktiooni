@@ -44,9 +44,9 @@ I hope nobody minds it)
     elif valik == 6:
         Loe_failist()
     elif valik == 7:
-        Kirjuta_failisse
+        Kirjuta_failisse()
     elif valik == 8:
-        kuva_sonastik
+        kuva_sonastik()
     else:
         print(".╭╮.")
         continue
