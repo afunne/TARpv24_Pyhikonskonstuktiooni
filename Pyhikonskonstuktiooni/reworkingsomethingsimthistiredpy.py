@@ -31,13 +31,13 @@ while True:
         print("\n1. Registreerimine")
         print("2. Autoriseerimine")
         print("3. Välju")
-        choice = input("Vali tegevus: ")
+        choice = int(input("Vali tegevus: "))
         
-        if choice == '1':
+        if choice == 1:
             registreerimine()
-        elif choice == '2':
+        elif choice == 2:
             autoriseerimine()
-        elif choice == '3':
+        elif choice == 3:
             break
         else:
             print("Vale valik!")
