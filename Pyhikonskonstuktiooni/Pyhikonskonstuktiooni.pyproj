@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5cab0188-469a-4b79-ab36-ade82b77ad81</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>grafika.py</StartupFile>
+    <StartupFile>callingoutquestion.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,11 +23,13 @@
   <ItemGroup>
     <Compile Include="Arvestustöö.py" />
     <Compile Include="Avestutöö2.py" />
+    <Compile Include="callingoutquestion.py" />
     <Compile Include="callingout_PrakrilineTöö.py" />
     <Compile Include="Dictonary.py" />
     <Compile Include="EmailPipeBomber.py" />
     <Compile Include="grafika.py" />
     <Compile Include="HTMLxPython.py" />
+    <Compile Include="imfixingsomethingiesagain.py" />
     <Compile Include="IWantTheRagingParyJSON.py" />
     <Compile Include="modelRework.py" />
     <Compile Include="MODULEduh.py" />
@@ -69,10 +71,14 @@
     <Content Include="andmed.json" />
     <Content Include="andmed_keerulised.json" />
     <Content Include="klass.json" />
+    <Content Include="koik.txt" />
     <Content Include="kusimused_vastused.txt" />
+    <Content Include="oiged.txt" />
+    <Content Include="participants.txt" />
     <Content Include="sonastik.txt" />
     <Content Include="TextFilework.txt" />
     <Content Include="userlol.txt" />
+    <Content Include="valed.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
