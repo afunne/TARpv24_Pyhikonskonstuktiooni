@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5cab0188-469a-4b79-ab36-ade82b77ad81</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>callingoutquestion.py</StartupFile>
+    <StartupFile>geometryFR.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -27,6 +27,7 @@
     <Compile Include="callingout_PrakrilineTöö.py" />
     <Compile Include="Dictonary.py" />
     <Compile Include="EmailPipeBomber.py" />
+    <Compile Include="geometryFR.py" />
     <Compile Include="grafika.py" />
     <Compile Include="HTMLxPython.py" />
     <Compile Include="imfixingsomethingiesagain.py" />
@@ -53,6 +54,7 @@
     <Compile Include="reworkingsomethingsimthistiredpy.py" />
     <Compile Include="textwork.py" />
     <Compile Include="ThisIsJustAtestDoc.py" />
+    <Compile Include="skibidishapes.py" />
     <Compile Include="workswithHTLMPxPythonMdule_ifitdoesntworkidkwhatwill.py" />
     <Compile Include="WORLDEMINIGAMESV2.py" />
     <Compile Include="module2.py" />
