@@ -5,7 +5,7 @@ import smtplib
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 GMAIL_USER = 'tahmazovhussejn@gmail.com'
-GMAIL_APP_PASSWORD = 'xfupqjtztllomtwj'
+GMAIL_APP_PASSWORD = ''
 
 def load_questions():
     """
