@@ -8,6 +8,9 @@ GMAIL_USER = 'tahmazovhussejn@gmail.com'
 GMAIL_APP_PASSWORD = 'xfupqjtztllomtwj'
 
 def load_questions():
+    """
+    Laeb küsimused ja vastused failist kusimused_vastused.txt sõnastikku.
+    """
     questions = {}
     try:
         with open("kusimused_vastused.txt", 'r', encoding='utf-8') as file:
@@ -21,14 +24,22 @@ def load_questions():
     return questions
 
 def save_question(question, answer):
+    """
+    Lisab uue küsimuse ja vastuse faili kusimused_vastused.txt.
+    """
     with open("kusimused_vastused.txt", 'a', encoding='utf-8') as file:
         file.write(f"{question}:{answer}\n")
 
 def get_score(item):
+    """
+    Tagastab osaleja õigete vastuste arvu.
+    """
     return item[1]['correct']
 
 def load_completed_participants():
-    """Load names and emails of participants who have already completed the quiz."""
+    """
+    Laadige nende osalejate nimed ja e-posti aadressid, kes on viktoriini juba täitnud.
+    """
     completed_names = set()
     completed_emails = set()
     try:
@@ -45,6 +56,10 @@ def load_completed_participants():
     return completed_names, completed_emails
 
 def conduct_quiz(questions, num_questions, participants):
+    """
+    Viib läbi küsitluse ühe osaleja jaoks, esitab küsimused,
+    kontrollib vastused ja salvestab tulemused.
+    """
     completed_names, completed_emails = load_completed_participants()
 
     while True:
@@ -108,6 +123,11 @@ def conduct_quiz(questions, num_questions, participants):
     return name
 
 def save_results(participants):
+    """
+    Salvestab tulemused:
+    Edukad osalejad faili oiged.txt
+    Ebaõnnestunud osalejad faili valed.txt
+    """
     # Sort participants by correct answers (descending)
     sorted_by_score = sorted(participants.items(), key=get_score, reverse=True)
 
@@ -132,6 +152,9 @@ def save_results(participants):
             file.write(f"{name}, {data['correct']}, {data['email']}\n")
 
 def send_email(to_email, subject, body):
+    """
+    Saadab e-kirja määratud aadressile, kasutades Gmaili SMTP serverit.
+    """
     try:
         server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
         server.starttls()
@@ -147,6 +170,9 @@ def send_email(to_email, subject, body):
         print(f"Viga e-kirja saatmisel {to_email}: {e}")
 
 def notify_participants(participants):
+    """
+    Saadab kõigile osalejatele isikupärastatud tulemuste e-kirjad.
+    """
     for name, data in participants.items():
         email = data['email']
         correct = data['correct']
@@ -162,6 +188,9 @@ def notify_participants(participants):
         send_email(email, subject, body)
 
 def notify_admin(participants):
+    """
+    Saadab administraatorile koondtulemused e-kirjana.
+    """
     if not participants:
         return
 
@@ -181,6 +210,9 @@ def notify_admin(participants):
     send_email(GMAIL_USER, subject, body)
 
 def display_results(participants):
+    """
+    Kuvab küsitluse tulemused ekraanil ja toob välja edukad vastajad.
+    """
     print("\nKüsimustiku tulemused:")
     print("=" * 30)
 
@@ -203,6 +235,9 @@ def display_results(participants):
     print("\nTulemused saadetud e-posti aadressidele.")
 
 def add_new_question():
+    """
+    Võimaldab administraatoril/lõppkasutajal lisada uusi küsimusi ja vastuseid.
+    """
     question = input("Sisesta uus küsimus: ").strip()
     answer = input("Sisesta selle küsimuse õige vastus: ").strip()
 
@@ -214,6 +249,9 @@ def add_new_question():
     print("Küsimus lisatud edukalt!")
 
 def main():
+    """
+    Peamenüü ja juhtloogika küsitluse läbiviimiseks, küsimuste lisamiseks või programmist väljumiseks.
+    """
     participants = {}
     questions = load_questions()
 
@@ -256,6 +294,5 @@ def main():
 
         else:
             print("Vigane valik. Palun proovi uuesti.")
-
-if __name__ == "__main__":
-    main()
+            
+main()
