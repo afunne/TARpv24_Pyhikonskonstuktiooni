@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter.font import *
-from math import sqrt
+from math import *
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -47,7 +47,7 @@ def ColorAndCalcolusGO():
 
 
 
-def show_graph():
+def itsrainingtacos():
     try:
         a = float(sisetus.get())
         b = float(sisetus2.get())
@@ -60,29 +60,23 @@ def show_graph():
         pealkiri2.config(text="See ei ole kvadraatiline võrrand (a ≠ 0).", bg="red")
         return
 
-    # Calculate vertex (точка минимума/максимума)
     x_ver = -b / (2 * a)
     y_ver= a * x_ver ** 2 + b * x_ver + c
 
-    # Create x range around the vertex
     x = np.linspace(x_ver - 10, x_ver + 10, 500)
     y = a * x ** 2 + b * x + c
 
-    # Calculate discriminant and roots
-    discriminant = b**2 - 4 * a * c
+    D = b**2 - 4 * a * c
     roots = []
 
-    if discriminant > 0:
-        # Два действительных корня
-        root1 = (-b + sqrt(discriminant)) / (2 * a)
-        root2 = (-b - sqrt(discriminant)) / (2 * a)
+    if D > 0:
+        root1 = (-b + sqrt(D)) / (2 * a)
+        root2 = (-b - sqrt(D)) / (2 * a)
         roots = [root1, root2]
-    elif discriminant == 0:
-        # Один действительный корень (дважды)
+    elif D == 0:
         root = -b / (2 * a)
         roots = [root]
 
-    # Plot the graph
     plt.figure()
     plt.plot(x, y, label=f'{a}x² + {b}x + {c}', color='blue')  # smooth curve
     plt.scatter(x_ver, y_ver, color='green', zorder=5)
@@ -136,7 +130,7 @@ meaning2 = Label(aken, text="x +", bg="white", font=("Arial", 16), fg="green")
 meaning3 = Label(aken, text="= 0", bg="white", font=("Arial", 16), fg="green")
 
 nupp = Button(aken, text="Lahendada", bg="green", font=("Arial", 12), fg="black", command=ColorAndCalcolusGO)
-graph = Button(aken, text="graafik", bg="green", font=("Arial", 12), fg="black", command=show_graph)
+graph = Button(aken, text="graafik", bg="green", font=("Arial", 12), fg="black", command=itsrainingtacos)
 
 pealkiri2 = Label(aken, text=":3", bg="lightyellow", font=("Arial", 12), fg="black", width=40, height=6)
 
@@ -153,7 +147,7 @@ meaning2.place(x=260, y=60)
 sisetus3.place(x=300, y=60)
 meaning3.place(x=350, y=60)
 nupp.place(x=400, y=60)
-graph.place(x=480, y=60)
+graph.place(x=490, y=60)
 pealkiri2.place(x=120, y=120)
 
 aken.mainloop()
