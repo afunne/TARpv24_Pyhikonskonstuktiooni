@@ -298,6 +298,7 @@ win = Tk()
 win.title("E-kirja saatmine")
 win.geometry("800x600")
 win.configure(bg="white")
+win.iconbitmap("emailicon.ico")
 
 attachments = []  # Store multiple attachments
 current_font_family = "Arial"

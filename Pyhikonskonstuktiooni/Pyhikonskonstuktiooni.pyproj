@@ -73,6 +73,7 @@
   <ItemGroup>
     <Content Include="andmed.json" />
     <Content Include="andmed_keerulised.json" />
+    <Content Include="emailicon.ico" />
     <Content Include="funnememe.png" />
     <Content Include="klass.json" />
     <Content Include="koik.txt" />
