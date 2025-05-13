@@ -1,11 +1,11 @@
 import random
 import smtplib
 
-# Global variables for Gmail and SMTP settings
+
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 GMAIL_USER = 'tahmazovhussejn@gmail.com'
-GMAIL_APP_PASSWORD = ''
+GMAIL_APP_PASSWORD = 'oxic fyxp hjyf mdwi'
 
 def load_questions():
     """
@@ -19,7 +19,7 @@ def load_questions():
                     question, answer = line.strip().split(':', 1)
                     questions[question.strip()] = answer.strip()
     except FileNotFoundError:
-        print("Warning: kusimused_vastused.txt not found. Creating new file.")
+        print("Hoiatus: kusimused_vastused.txt ei leitud. Uue faili loomine.")
         open("kusimused_vastused.txt", 'w', encoding='utf-8').close()
     return questions
 
@@ -68,10 +68,9 @@ def conduct_quiz(questions, num_questions, participants):
             print("Nimi ei tohi olla tühi!")
             continue
 
-        # Check if the name has already completed the quiz
         if name.lower() in completed_names:
             print("See nimi on juba küsimustikku täitnud! Proovimine keelatud.")
-            return None  # Exit if the name already exists in the list of completed participants
+            return None
         break
 
     while True:
@@ -80,14 +79,12 @@ def conduct_quiz(questions, num_questions, participants):
             print("E-posti aadress ei tohi olla tühi!")
             continue
 
-        # Check if the email has already been used for the quiz
         if email in completed_emails:
             print("See e-posti aadress on juba küsimustikku täitnud! Proovimine keelatud.")
-            return None  # Exit if the email already exists in the list of completed participants
+            return None
         break
 
 
-    # Check if name or email already used
     if name.lower() in completed_names:
         print("See nimi on juba küsimustikku täitnud! Proovimine keelatud.")
         return None
@@ -128,25 +125,22 @@ def save_results(participants):
     Edukad osalejad faili oiged.txt
     Ebaõnnestunud osalejad faili valed.txt
     """
-    # Sort participants by correct answers (descending)
+
     sorted_by_score = sorted(participants.items(), key=get_score, reverse=True)
 
-    # Save to correct.txt
+
     with open("oiged.txt", 'w', encoding='utf-8') as file:
         for name, data in sorted_by_score:
             if data['status'] == "SOBIS":
                 file.write(f"{name} – {data['correct']} õigesti\n")
 
-    # Sort alphabetically
     sorted_alphabetically = sorted(participants.items())
 
-    # Save to incorrect.txt
     with open("valed.txt", 'w', encoding='utf-8') as file:
         for name, data in sorted_alphabetically:
             if data['status'] != "SOBIS":
                 file.write(f"{name}\n")
 
-    # Save to all.txt (append mode to keep history)
     with open("koik.txt", 'a', encoding='utf-8') as file:
         for name, data in participants.items():
             file.write(f"{name}, {data['correct']}, {data['email']}\n")
@@ -248,15 +242,19 @@ def add_new_question():
     save_question(question, answer)
     print("Küsimus lisatud edukalt!")
 
+
+# I couldn't call them out from a difrent file so I had to look up how TS does it
+# I will stick to this, tho
 def main():
     """
-    Peamenüü ja juhtloogika küsitluse läbiviimiseks, küsimuste lisamiseks või programmist väljumiseks.
+    Peamenüü ja juhtloogika küsitluse läbiviimiseks,
+    küsimuste lisamiseks või programmist väljumiseks.
     """
     participants = {}
     questions = load_questions()
 
     while True:
-        print("\n=== PEAMENÜÜ ===")
+        print("\n=_= PEAMENÜÜ =_=")
         print("1. Alusta küsimustikku")
         print("2. Lisa uus küsimus")
         print("3. Välju")
@@ -275,7 +273,7 @@ def main():
                 print(f"Hoiatus: Failis on ainult {len(questions)} küsimust. Kasutan kõiki.")
                 num_questions = len(questions)
 
-            for _ in range(num_participants):
+            for i in range(num_participants):
                 conduct_quiz(questions, num_questions, participants)
 
             if participants:
