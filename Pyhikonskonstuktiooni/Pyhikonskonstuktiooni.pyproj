@@ -73,6 +73,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="aksesuar1.png" />
+    <Content Include="aksesuar2.png" />
+    <Content Include="aksesuar3.png" />
+    <Content Include="aksesuar4.png" />
+    <Content Include="aksesuar5.png" />
     <Content Include="andmed.json" />
     <Content Include="andmed_keerulised.json" />
     <Content Include="emailicon.ico" />
@@ -85,9 +89,17 @@
     <Content Include="participants.txt" />
     <Content Include="opening.mp3" />
     <Content Include="Hip_Hop.mp3" />
-    <Content Include="silmad.png" />
+    <Content Include="silmad1.png" />
+    <Content Include="silmad2.png" />
+    <Content Include="silmad3.png" />
+    <Content Include="silmad4.png" />
+    <Content Include="silmad5.png" />
     <Content Include="sonastik.txt" />
-    <Content Include="suu.png" />
+    <Content Include="suu1.png" />
+    <Content Include="suu2.png" />
+    <Content Include="suu3.png" />
+    <Content Include="suu4.png" />
+    <Content Include="suu5.png" />
     <Content Include="TextFilework.txt" />
     <Content Include="userlol.txt" />
     <Content Include="alus.png" />

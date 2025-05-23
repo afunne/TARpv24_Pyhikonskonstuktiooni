@@ -145,7 +145,7 @@ def salvesta_nägu():
         return  # User cancelled
 
     lõpp_pilt = Image.new("RGBA", (400, 400), (255, 255, 255, 255))
-    osad = ["nägu", "otsmik", "juuksed", "silmad", "nina", "suu"]
+    osad = ["nägu", "otsmik", "aksesuar", "silmad", "nina", "suu"]
 
     for nimi in osad:
         if nimi == "nägu":
@@ -197,23 +197,23 @@ seaded = {
     "corner_radius": 20
 }
 
-ctk.CTkButton(frame, text="Vali näoosad", **seaded).pack(pady=5)
+ctk.CTkButton(frame, text="Vali näoosad",text_color="black" ,**seaded).pack(pady=5)
 
-for nimi in ["juuksed", "silmad", "nina", "suu", "otsmik"]:
+for nimi in ["aksesuar", "silmad", "nina", "suu"]:
     rida = ctk.CTkFrame(frame)
     rida.pack(pady=3)
-    ctk.CTkButton(rida, text=nimi.capitalize(), command=lambda n=nimi: toggle_valik(n, 200, 200), **seaded).pack(side="left")
+    ctk.CTkButton(rida, text_color="black",text=nimi.capitalize(), command=lambda n=nimi: toggle_valik(n, 200, 200), **seaded).pack(side="left")
     valik = ttk.Combobox(rida, values=[1, 2, 3, 4, 5], width=3)
     valik.current(0)
     valik.pack(side="left", padx=5)
     valik.bind("<<ComboboxSelected>>", lambda e, n=nimi, cb=valik: muuda_valikut(n, cb.get()))
     valikud[nimi] = 1
 
-ctk.CTkButton(frame, text="Loo nägu", command=salvesta_nägu, **seaded).pack(pady=10)
+ctk.CTkButton(frame, text="Loo nägu",text_color="black" ,command=salvesta_nägu, **seaded).pack(pady=10)
 
 frame_mus = ctk.CTkFrame(frame)
 frame_mus.pack(padx=10, pady=10)
-ctk.CTkButton(frame_mus, text="Mängi muusikat", command=mängi_muusika, **seaded).pack(side="left", pady=10)
-ctk.CTkButton(frame_mus, text="Peata muusikat", command=peata_muusika, **seaded).pack(side="left", pady=10)
+ctk.CTkButton(frame_mus, text="Mängi muusikat",text_color="black",command=mängi_muusika, **seaded).pack(side="left", pady=10)
+ctk.CTkButton(frame_mus, text="Peata muusikat",text_color="black",command=peata_muusika, **seaded).pack(side="left", pady=10)
 
 app.mainloop()
