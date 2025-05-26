@@ -180,12 +180,12 @@ def load_data_from_db(tree, search_query=""):
 
 
 # Loo sildid ja sisestusväljad
+entries = {}
 
 def lisa_andmed():
     root = tk.Tk()
     root.title("Filmid")
     labels = ["Pealkiri", "Režissöör", "Aasta", "Žanr", "Kestus", "Reiting", "Keel", "Riik", "Kirjeldus"]
-    entries = {}
     for i, label in enumerate(labels):
         tk.Label(root, text=label).grid(row=i, column=0, padx=10, pady=5)
         entry = tk.Entry(root, width=40)
