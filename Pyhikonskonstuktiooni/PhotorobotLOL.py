@@ -87,16 +87,25 @@
 # app.mainloop()
 
 from tkinter.messagebox import showinfo
-import customtkinter as ctk
-from tkinter import simpledialog, Canvas, ttk
-from PIL import Image, ImageTk
-import pygame
+from tkinter import simpledialog, Canvas
 from tkinter.filedialog import asksaveasfilename
+from tkinter import ttk
+from PIL import Image, ImageTk
+import customtkinter as ctk
+import pygame
 
 pildid = {}
 objektid = {}
 olemas = {}
 valikud = {}
+alus_index = 1
+
+valiku_nimed = {
+    "aksesuar": ["Peapael", "Müts", "Prillid", "Kõrvarõngad", "Kiiver"],
+    "silmad": ["Suured silmad", "Vihased silmad", "Unised silmad", "Naerused silmad", "Kassisilmsed"],
+    "nina": ["Väike nina", "Suur nina", "Konksnina", "Nuppnina", "Sirge nina"],
+    "suu": ["Naeratus", "Huuled koos", "Üllatunud", "Kurb", "Suu lahti"]
+}
 
 def toggle_osa(nimi, fail, x, y):
     if olemas.get(nimi):
@@ -109,22 +118,24 @@ def toggle_osa(nimi, fail, x, y):
             pildid[nimi] = tk_img
             objektid[nimi] = canvas.create_image(x, y, image=tk_img)
             olemas[nimi] = True
-        except FileNotFoundError:
-            showinfo("Viga", f"Pilt puudub: {fail}")
         except Exception as e:
-            showinfo("Tundmatu viga", f"Midagi läks valesti: {e}")
+            showinfo("Viga", f"Ei saanud faili laadida: {fail}\n{e}")
 
 def toggle_valik(nimi, x, y):
-    valik = valikud.get(nimi, 1)
-    failinimi = f"{nimi}{valik}.png"
-    toggle_osa(nimi, failinimi, x, y)
+    if olemas.get(nimi):
+        canvas.delete(objektid[nimi])
+        olemas[nimi] = False
+    else:
+        fail = f"{nimi}{valikud.get(nimi, 1)}.png"
+        toggle_osa(nimi, fail, x, y)
 
 def muuda_valikut(nimi, valik):
     try:
         valikud[nimi] = int(valik)
         if olemas.get(nimi):
-            toggle_valik(nimi, 200, 200)  # Remove
-            toggle_valik(nimi, 200, 200)  # Add with new valik
+            canvas.delete(objektid[nimi])
+            olemas[nimi] = False
+            toggle_valik(nimi, 200, 200)
     except Exception as e:
         showinfo("Viga", f"Ei saanud valikut muuta: {e}")
 
@@ -134,36 +145,56 @@ def mängi_muusika():
 def peata_muusika():
     pygame.mixer.music.stop()
 
+def vaheta_alus():
+    global alus_index
+    if olemas.get("nägu"):
+        canvas.delete(objektid["nägu"])
+        olemas["nägu"] = False
+
+    alus_index = 2 if alus_index == 1 else 1
+    uus_fail = f"alus{'' if alus_index == 1 else '2'}.png"
+
+    try:
+        toggle_osa("nägu", uus_fail, 200, 200)
+        olemas["nägu"] = True
+    except Exception as e:
+        showinfo("Viga", f"Ei saanud alusfaili laadida: {uus_fail}\n{e}")
+
 def salvesta_nägu():
-    # Open Save As dialog, suggest PNG format
     failitee = asksaveasfilename(
         defaultextension=".png",
         filetypes=[("PNG pildifailid", "*.png")],
         title="Salvesta pilt"
     )
     if not failitee:
-        return  # User cancelled
+        return
 
     lõpp_pilt = Image.new("RGBA", (400, 400), (255, 255, 255, 255))
     osad = ["nägu", "otsmik", "aksesuar", "silmad", "nina", "suu"]
 
     for nimi in osad:
         if nimi == "nägu":
-            fail = "alus.png"
+            if alus_index == 1:
+                fail = "alus.png"
+            else:
+                fail = "alus2.png"
         else:
             if olemas.get(nimi):
-                fail = f"{nimi}{valikud.get(nimi, 1)}.png"
+                number = valikud.get(nimi, 1)
+                fail = f"{nimi}{number}.png"
             else:
                 continue
-        try:
-            osa = Image.open(fail).convert("RGBA").resize((400, 400))
-            lõpp_pilt.alpha_composite(osa)
-        except FileNotFoundError:
-            showinfo("Viga", f"Pilt puudub: {fail}")
-            return
-        except Exception as e:
-            showinfo("Viga", f"Midagi läks valesti pildi laadimisel: {e}")
-            return
+
+    # Try to open and stack the image
+    try:
+        osa = Image.open(fail).convert("RGBA").resize((400, 400))
+        lõpp_pilt.alpha_composite(osa)
+    except FileNotFoundError:
+        showinfo("Viga", f"Pilt puudub: {fail}")
+        return
+    except Exception as e:
+        showinfo("Viga", f"Midagi läks valesti pildi laadimisel: {e}")
+        return
 
     try:
         lõpp_pilt.save(failitee)
@@ -197,23 +228,33 @@ seaded = {
     "corner_radius": 20
 }
 
-ctk.CTkButton(frame, text="Vali näoosad",text_color="black" ,**seaded).pack(pady=5)
+ctk.CTkButton(frame, text="Vali näoosad", text_color="black", **seaded).pack(pady=5)
 
 for nimi in ["aksesuar", "silmad", "nina", "suu"]:
     rida = ctk.CTkFrame(frame)
     rida.pack(pady=3)
-    ctk.CTkButton(rida, text_color="black",text=nimi.capitalize(), command=lambda n=nimi: toggle_valik(n, 200, 200), **seaded).pack(side="left")
-    valik = ttk.Combobox(rida, values=[1, 2, 3, 4, 5], width=3)
+
+    ctk.CTkButton(rida, text=nimi.capitalize(), text_color="black",
+                  command=lambda n=nimi: toggle_valik(n, 200, 200), **seaded).pack(side="left")
+
+    nimed = valiku_nimed[nimi]
+    valik = ttk.Combobox(rida, values=nimed, width=18)
     valik.current(0)
     valik.pack(side="left", padx=5)
-    valik.bind("<<ComboboxSelected>>", lambda e, n=nimi, cb=valik: muuda_valikut(n, cb.get()))
+
+    def create_bind_callback(nimi, combobox, nimed):
+        return lambda e: muuda_valikut(nimi, str(nimed.index(combobox.get()) + 1))
+
+    valik.bind("<<ComboboxSelected>>", create_bind_callback(nimi, valik, nimed))
     valikud[nimi] = 1
 
-ctk.CTkButton(frame, text="Loo nägu",text_color="black" ,command=salvesta_nägu, **seaded).pack(pady=10)
+ctk.CTkButton(frame, text="Loo nägu", text_color="black", command=salvesta_nägu, **seaded).pack(pady=10)
+ctk.CTkButton(frame, text="Vaheta teemat", text_color="black", command=vaheta_alus, **seaded).pack(pady=5)
 
 frame_mus = ctk.CTkFrame(frame)
 frame_mus.pack(padx=10, pady=10)
-ctk.CTkButton(frame_mus, text="Mängi muusikat",text_color="black",command=mängi_muusika, **seaded).pack(side="left", pady=10)
-ctk.CTkButton(frame_mus, text="Peata muusikat",text_color="black",command=peata_muusika, **seaded).pack(side="left", pady=10)
+ctk.CTkButton(frame_mus, text="Mängi muusikat", text_color="black", command=mängi_muusika, **seaded).pack(side="left", pady=10)
+ctk.CTkButton(frame_mus, text="Peata muusikat", text_color="black", command=peata_muusika, **seaded).pack(side="left", pady=10)
 
 app.mainloop()
+
