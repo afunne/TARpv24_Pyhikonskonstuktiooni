@@ -46,6 +46,17 @@ def create_table():
         # Siia päringud
         cursor.execute(create_table)
         print("Tabel loodud")
+
+    except sqlite3.Error as error:
+        print("Tekkis viga andmebaasiga ühendamisel:", error)
+    finally:
+        if conn:
+            conn.close()
+
+def insert():
+    try:
+        conn = sqlite3.connect('movies.db')
+        cursor = conn.cursor()
         cursor.execute(insert_into)
         print("Tebel täidetud")
 
@@ -56,23 +67,31 @@ def create_table():
             conn.close()
 
 
+def täida_tabel():
+    try:
+        conn = sqlite3.connect('movies.db')
+        cursor = conn.cursor()
+        print("Ühendus loodud")
 
-try:
-    conn = sqlite3.connect('movies.db')
-    cursor = conn.cursor()
-    print("Ühendus loodud")
+        # Teostame päringu, et lugeda kõik andmed tabelist 'movies'
+        cursor.execute("SELECT * FROM movies")
+        rows = cursor.fetchall() # shows result in the screen
 
-    # Teostame päringu, et lugeda kõik andmed tabelist 'movies'
-    cursor.execute("SELECT * FROM movies")
-    rows = cursor.fetchall() # shows result in the screen
+        # Väljastame kõik loetud read
+        for row in rows:
+            print(row)
 
-    # Väljastame kõik loetud read
-    for row in rows:
-        print(row)
+    except sqlite3.Error as error:
+        print("Tekkis viga andmebaasiga ühendamisel või päringu teostamisel:", error)
+    finally:
+        if conn:
+            conn.close()
+            print("Ühendus suleti")
 
-except sqlite3.Error as error:
-    print("Tekkis viga andmebaasiga ühendamisel või päringu teostamisel:", error)
-finally:
-    if conn:
-        conn.close()
-        print("Ühendus suleti")
+
+
+create_table()
+täida_tabel()
+insert()
+
+
