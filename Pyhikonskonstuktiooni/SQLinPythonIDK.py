@@ -196,7 +196,6 @@ def lisa_andmed():
     submit_button.grid(row=len(labels), column=0, columnspan=2, pady=20)
     root.mainloop
 
-
 root = tk.Tk()
 root.title("Filmid")
 
