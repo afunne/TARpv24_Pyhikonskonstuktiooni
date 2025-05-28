@@ -1,6 +1,6 @@
 import sqlite3
 
-# # Loo ühendus andmebaasiga (NB! kui 'movies.db' ei eksisteeri, siis see luuakse)
+# # Loo ühendus andmebaasiga (NB! kui 'moviesWORD.db' ei eksisteeri, siis see luuakse)
 # conn = sqlite3.connect('movies.db')
 
 # # cursor on oluline päringute tegemisel
@@ -21,6 +21,34 @@ create_table = """
   language TEXT,
   country TEXT,
   description TEXT
+);
+"""
+
+create_table_keeled = """
+CREATE TABLE IF NOT EXISTS languages (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT UNIQUE NOT NULL
+);
+"""
+
+create_table_riigid = """
+CREATE TABLE IF NOT EXISTS countries (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT UNIQUE NOT NULL
+);
+"""
+
+create_table_žanrid = """
+CREATE TABLE IF NOT EXISTS genres (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT UNIQUE NOT NULL
+);
+"""
+
+create_table_režissöörid = """
+CREATE TABLE IF NOT EXISTS directors (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT UNIQUE NOT NULL
 );
 """
 
