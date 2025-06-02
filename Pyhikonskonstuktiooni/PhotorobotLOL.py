@@ -160,7 +160,7 @@ def vaheta_alus():
     except Exception as e:
         showinfo("Viga", f"Ei saanud alusfaili laadida: {uus_fail}\n{e}")
 
-def salvesta_nägu():
+def salvesta_nägu(): # a reminder to myself to show an example here! :3
     global alus_index
     failitee = asksaveasfilename(
         defaultextension=".png",
@@ -198,7 +198,7 @@ def salvesta_nägu():
         showinfo("Viga", f"Ei saanud faili salvestada: {e}")
 
 
-    # Try to open and stack the image
+    # open and stack the image
     try:
         osa = Image.open(fail).convert("RGBA").resize((400, 400))
         lõpp_pilt.alpha_composite(osa)
