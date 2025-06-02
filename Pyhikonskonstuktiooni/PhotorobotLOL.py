@@ -161,6 +161,7 @@ def vaheta_alus():
         showinfo("Viga", f"Ei saanud alusfaili laadida: {uus_fail}\n{e}")
 
 def salvesta_nägu():
+    global alus_index
     failitee = asksaveasfilename(
         defaultextension=".png",
         filetypes=[("PNG pildifailid", "*.png")],
@@ -169,21 +170,33 @@ def salvesta_nägu():
     if not failitee:
         return
 
-    lõpp_pilt = Image.new("RGBA", (400, 400), (255, 255, 255, 255))
+    lõpp_pilt = Image.new("RGBA", (400, 400), (0, 0, 0, 0))
     osad = ["nägu", "otsmik", "aksesuar", "silmad", "nina", "suu"]
 
     for nimi in osad:
         if nimi == "nägu":
-            if alus_index == 1:
-                fail = "alus.png"
-            else:
-                fail = "alus2.png"
+            fail = f"alus{'' if alus_index == 1 else '2'}.png"
+        elif olemas.get(nimi):
+            fail = f"{nimi}{valikud.get(nimi, 1)}.png"
         else:
-            if olemas.get(nimi):
-                number = valikud.get(nimi, 1)
-                fail = f"{nimi}{number}.png"
-            else:
-                continue
+            continue
+
+        try:
+            osa = Image.open(fail).convert("RGBA").resize((400, 400))
+            lõpp_pilt = Image.alpha_composite(lõpp_pilt, osa)
+        except FileNotFoundError:
+            showinfo("Viga", f"Pilt puudub: {fail}")
+            return
+        except Exception as e:
+            showinfo("Viga", f"Pildi lisamine ebaõnnestus: {e}")
+            return
+
+    try:
+        lõpp_pilt.save(failitee)
+        showinfo("Horaw! :D", f"Fail salvestatud: {failitee}")
+    except Exception as e:
+        showinfo("Viga", f"Ei saanud faili salvestada: {e}")
+
 
     # Try to open and stack the image
     try:
