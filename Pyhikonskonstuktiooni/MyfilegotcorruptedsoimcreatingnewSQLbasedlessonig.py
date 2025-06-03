@@ -1016,7 +1016,7 @@ import sqlite3
 
 DB_NAME = "moviesWORD.db"
 
-# ---------- Database ----------
+# Database
 def get_conn():
     return sqlite3.connect(DB_NAME)
 
@@ -1048,7 +1048,7 @@ def init_db():
     conn.commit()
     conn.close()
 
-# ---------- UI ----------
+# UI
 def load_movies():
     for row in tree.get_children():
         tree.delete(row)
@@ -1421,7 +1421,7 @@ def delete_movie():
         conn.close()
         load_movies()
 
-# ---------- Main ----------
+# Main
 init_db()
 root = tk.Tk()
 root.title("Filmide andmebaas")
